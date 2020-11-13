@@ -7,7 +7,7 @@ app.use(express.json());
 //app.use(express.static(__dirname))
 
 
-//app.get('/api/restaurants/:id/reviews', callback )
+// app.get('/api/restaurants/:id/reviews', callback )
 
 //app.
 
