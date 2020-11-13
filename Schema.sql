@@ -7,35 +7,38 @@ USE yelp;
 CREATE TABLE Restaurants (
   resID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   resName VARCHAR(50) NOT NULL,
-  overallRating DECIMAL(1, 1) NOT NULL
+  overallRating DECIMAL(2, 1) NOT NULL
 );
 
 CREATE TABLE Users (
   userID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   userName VARCHAR(20) NOT NULL,
   elite BOOLEAN
-)
+);
 
 CREATE TABLE Reviews (
   revID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   rating TINYINT NOT NULL,
-  reviewText VARCHAR(200) NOT NULL,
-  userID INT NOT NULL REFERENCES Users(userID)
-  resID INT NOT NULL REFERENCES Restaurants(resID),
-  reviewDate DATE,
+  reviewText VARCHAR(2000) NOT NULL,
+  userID INT,
+  resID INT,
+  reviewDate VARCHAR(50),
   useful INT,
   helpful INT,
   cool INT,
-  comment VARCHAR(100),
+  comment VARCHAR(1000),
   commentFrom VARCHAR(50),
-  commentCreatedAt DATE
+  commentCreatedAt VARCHAR(50),
+  FOREIGN KEY (userID) REFERENCES Users(userID),
+  FOREIGN KEY (resID) REFERENCES Restaurants(resID)
 );
 
 
 CREATE TABLE Photos (
   photoID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  revID INT NOT NULL REFERENCES Reviews(revID),
-  imgPath VARCHAR(50) NOT NULL
+  revID INT,
+  imgPath VARCHAR(50) NOT NULL,
+  FOREIGN KEY (revID) REFERENCES Reviews(revID)
 );
 
 
