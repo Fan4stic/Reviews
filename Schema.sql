@@ -10,11 +10,17 @@ CREATE TABLE Restaurants (
   overallRating DECIMAL(1, 1) NOT NULL
 );
 
+CREATE TABLE Users (
+  userID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  userName VARCHAR(20) NOT NULL,
+  elite BOOLEAN
+)
+
 CREATE TABLE Reviews (
   revID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   rating TINYINT NOT NULL,
   reviewText VARCHAR(200) NOT NULL,
-  userID INT NOT NULL,
+  userID INT NOT NULL REFERENCES Users(userID)
   resID INT NOT NULL REFERENCES Restaurants(resID),
   reviewDate DATE,
   useful INT,
@@ -31,6 +37,8 @@ CREATE TABLE Photos (
   revID INT NOT NULL REFERENCES Reviews(revID),
   imgPath VARCHAR(50) NOT NULL
 );
+
+
 
 
 
