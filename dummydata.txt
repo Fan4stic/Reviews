@@ -1,0 +1,30 @@
+[
+  {
+    "revID": 23576
+    “resID”: 287450,
+    “resName: “restaurantA”,
+    “Rating: 4,
+    “userID”: 4805,
+    “userName: “userA”,
+    “reviewDate: “2020-11-01”,
+    “fullText”: “blahblahblah i think this restaurant is good and you should listen to me”,
+    “useful”: 2,
+    “Funny”: 0,
+    “Cool”: 0,
+    “Comment”: “Comment from owner of business”
+  },
+  {
+    "revID": 21454
+    “resID”: 287999,
+    “resName: “restaurantB”,
+    “Rating: 2,
+    “userID”: 24563,
+    “userName: “userB”,
+    “reviewDate: “2020-04-01”,
+    “fullText”: “blahblahblah i think this restaurant is good and you should listen to me”,
+    "useful": 0,
+    "funny": 2,
+    "cool": 3,
+    “Comments”: “you’re wrong, im smarter than you and i say you’re wrong”
+  }
+]
