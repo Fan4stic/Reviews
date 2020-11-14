@@ -1,3 +1,4 @@
+
 const mysql = require('mysql');
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -11,7 +12,7 @@ connection.connect();
 
 connection.asyncQuery = (query) => {
   return new Promise((resolve, reject) => {
-    connection.query(query, params, (err, result)=> {
+    connection.query(query, (err, result)=> {
       if (err) {
         reject(err);
       } else {

@@ -36,6 +36,7 @@ createEntries = (amount) => {
   }
 };
 
+//generate full restaurants table first, then users, then reviews, then photos. 
 
 addEntries = (arrayOfReviews) => {
   //form post query to model for each
@@ -77,7 +78,7 @@ addEntries = (arrayOfReviews) => {
 
 createEntries(50);
 
-//need promise?
+
 
 addEntries(reviewsArray);
 
