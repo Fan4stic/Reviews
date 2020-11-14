@@ -1,7 +1,5 @@
 const connection = require('./index.js');
 
-
-
 module.exports = {
   get: async (req, res) => {
     let id = req.url.slice(17, -8);

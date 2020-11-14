@@ -10,12 +10,12 @@ createEntries = (amount) => {
     let reviewObj = {};
     reviewObj.rating = Math.floor(Math.random() * 6);
     reviewObj.overallRating = (Math.random() * 5);
-    reviewObj.reviewText = faker.lorem.paragraphs(1);
+    reviewObj.reviewText = faker.lorem.paragraphs(2);
     reviewObj.reviewDate = faker.date.past().toJSON().slice(0, 10);
     reviewObj.comment = faker.lorem.paragraph();
     reviewObj.commentFrom = faker.name.findName();
     reviewObj.commentCreatedAt = faker.date.past().toJSON().slice(0, 10);
-    reviewObj.resName = faker.lorem.word();
+    reviewObj.resName = faker.lorem.word(2);
     reviewObj.imgPath = faker.image.food();
     reviewObj.elite = faker.random.boolean();
     reviewObj.userName = faker.name.findName();
@@ -36,7 +36,7 @@ createEntries = (amount) => {
   }
 };
 
-//generate full restaurants table first, then users, then reviews, then photos. 
+//generate full restaurants table first, then users, then reviews, then photos.
 
 addEntries = (arrayOfReviews) => {
   //form post query to model for each
