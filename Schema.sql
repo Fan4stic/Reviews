@@ -12,8 +12,13 @@ CREATE TABLE Restaurants (
 
 CREATE TABLE Users (
   userID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  userName VARCHAR(20) NOT NULL,
-  elite BOOLEAN
+  userName VARCHAR(50) NOT NULL,
+  friends INT,
+  city VARCHAR(100),
+  userState VARCHAR(20),
+  reviews INT,
+  elite BOOLEAN,
+  avatar VARCHAR(100)
 );
 
 CREATE TABLE Reviews (

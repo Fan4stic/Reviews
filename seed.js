@@ -16,15 +16,21 @@ createEntries = (amount) => {
     reviewObj.commentFrom = faker.name.findName();
     reviewObj.commentCreatedAt = faker.date.past().toJSON().slice(0, 10);
     reviewObj.resName = faker.lorem.word();
-    reviewObj.imgPath = 'https://loremflickr.com/320/240/food';
+    reviewObj.imgPath = faker.image.food();
     reviewObj.elite = faker.random.boolean();
     reviewObj.userName = faker.name.findName();
     reviewObj.useful = Math.floor(Math.random() * 100);
     reviewObj.helpful = Math.floor(Math.random() * 100);
     reviewObj.cool = Math.floor(Math.random() * 100);
-    reviewObj.userID = Math.floor(Math.random() * 6);
-    reviewObj.resID = Math.floor(Math.random() * 6);
-    reviewObj.revID = Math.floor(Math.random() * 50);
+    reviewObj.userID = Math.floor(Math.random() * 100);
+    reviewObj.resID = Math.floor(Math.random() * 100);
+    reviewObj.revID = Math.floor(Math.random() * 10000);
+    reviewObj.friends = Math.floor(Math.random() * 500);
+    reviewObj.reviewCount = Math.floor(Math.random() * 100);
+    reviewObj.city = faker.address.city();
+    reviewObj.userState = faker.address.state();
+    reviewObj.avatar = faker.image.avatar();
+
 
     reviewsArray.push(reviewObj);
   }
@@ -35,7 +41,7 @@ addEntries = (arrayOfReviews) => {
   //form post query to model for each
   for (k = 0; k < arrayOfReviews.length; k++) {
 
-    let userQuery = `insert into Users values(0, '${arrayOfReviews[k].userName}', ${arrayOfReviews[k].elite});`;
+    let userQuery = `insert into Users values(0, '${arrayOfReviews[k].userName}' , '${arrayOfReviews[k].friends}', '${arrayOfReviews[k].city}', '${arrayOfReviews[k].userState}', '${arrayOfReviews[k].reviewCount}', ${arrayOfReviews[k].elite}, '${arrayOfReviews[k].avatar}');`;
     connection.query(userQuery, (err) => {
       if (err) {
         console.log(err);
