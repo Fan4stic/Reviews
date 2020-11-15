@@ -1,0 +1,11 @@
+.title {
+  font-size: 20px;
+  font-weight: 300;
+  background-color: lightskyblue;
+  text-align: left;
+  padding: 10px 10px;
+  color: black;
+}
+body {
+  font-family: sans-serif, arial;
+}

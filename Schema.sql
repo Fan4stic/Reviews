@@ -24,14 +24,14 @@ CREATE TABLE Users (
 CREATE TABLE Reviews (
   revID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   rating TINYINT NOT NULL,
-  reviewText VARCHAR(2000) NOT NULL,
+  reviewText VARCHAR(5000) NOT NULL,
   userID INT NOT NULL,
   resID INT NOT NULL,
   reviewDate VARCHAR(50),
   useful INT DEFAULT 0,
   helpful INT DEFAULT 0,
   cool INT DEFAULT 0,
-  comment VARCHAR(1000),
+  comment VARCHAR(2000),
   commentFrom VARCHAR(50),
   commentCreatedAt VARCHAR(50)
   -- FOREIGN KEY (userID) REFERENCES Users(userID),
