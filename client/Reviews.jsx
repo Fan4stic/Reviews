@@ -1,11 +1,13 @@
 import React from 'react';
 import axios from 'axios';
+import ReviewList from './ReviewList.jsx';
+import StartReview from './StartReview.jsx';
 
 class Reviews extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      reviews:[]
+      reviews: []
     };
 
   }
@@ -22,7 +24,8 @@ class Reviews extends React.Component {
   render() {
     return (
       <div>
-        <h3> Reviewsssssssss</h3>
+        <StartReview />
+        <ReviewList reviews={this.state.reviews}/>
       </div>
     );
   }
