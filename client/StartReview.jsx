@@ -1,9 +1,17 @@
 import React from 'react';
 
-const StartReview = (props) => (
-  <img src="https://loremflickr.com/320/240/paris" onClick={() => (console.log('make popout modal'))} />
+const StartReview = ({toggle, content}) => {
+  const [isShown, setIsShown] = React.useState(false);
+  const hide = () => setIsShown(false);
+  const show = () => setIsShown(true);
 
-);
+  return (
+    <>
+      {toggle(show)}
+      {isShown && content(hide)}
+    </>
+  );
+};
 
 
 export default StartReview;

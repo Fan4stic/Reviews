@@ -9,3 +9,12 @@
 body {
   font-family: sans-serif, arial;
 }
+.modal {
+  position: fixed;
+  top: 200px;
+  padding: 24px;
+  left: 200px;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 3px;
+}
