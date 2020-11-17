@@ -10,7 +10,7 @@ app.use(express.json());
 
 //for some reason this isnt working with path
 // app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/../public'));
 
 app.post('/api/restaurants/:id/reviews', controller.post);
 

@@ -6,7 +6,7 @@ module.exports = {
     let queryStr = `select * from reviews where resID = ${id}`;
       try {
         const result = await connection.asyncQuery(queryStr);
-        console.log(result);
+        // console.log(result);
         res.status(200).send(result)
       } catch (err) {
         res.sendStatus(404).end()
@@ -19,7 +19,7 @@ module.exports = {
     console.log(queryStr)
     try {
       const result = await connection.asyncQuery(queryStr);
-      console.log(result);
+      // console.log(result);
       res.status(200).send("posted")
     } catch (err) {
       res.status(404).send(err)

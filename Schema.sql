@@ -29,7 +29,7 @@ CREATE TABLE Reviews (
   resID INT NOT NULL,
   reviewDate VARCHAR(50),
   useful INT DEFAULT 0,
-  helpful INT DEFAULT 0,
+  funny INT DEFAULT 0,
   cool INT DEFAULT 0,
   comment VARCHAR(2000),
   commentFrom VARCHAR(50),
