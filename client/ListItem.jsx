@@ -9,7 +9,7 @@ const divStyle = {
   display: 'grid',
   gridTemplateColumns: '1fr 1fr 4fr',
   gridTemplateRows: '1fr',
-  gridColumnGap: '18px',
+  gridColumnGap: '6px',
   gridTemplateAreas: 'aside details section',
   borderBottom: 'solid',
   borderBottomWidth: 'thin',
@@ -33,6 +33,11 @@ const avatar = {
   borderRadius: '4px'
 };
 
+const detailStyle = {
+  fontSize: '9px',
+  textAlign: 'left',
+};
+
 //need to style aside so it shows details to side of image
 //add conditional render images to bottom
 const ListItem = (props) => (
@@ -41,13 +46,11 @@ const ListItem = (props) => (
       <img style={avatar} src={props.review.avatar} />
     </aside>
     <section>
-      <div>{props.review.userName}</div>
-      <span>{props.review.city}{props.review.userState}</span>
-      <span>{props.review.friends}</span>
-      <span>{props.review.reviews}</span>
-      <span>{props.review.</span>
-      <span>{props.review.</span>
-
+      <div style={{fontWeight: 'bold', fontSize: '10px'}}>{props.review.userName}</div>
+      <div style={{fontSize: '10px'}}>{props.review.city}, {props.review.userState}</div>
+      <div style={detailStyle}>{props.review.friends}</div>
+      <div style={detailStyle}>{props.review.reviews}</div>
+      <div style={{color: '#d32323', fontSize: '9px'}}>{props.review.elite ? "Elite '2020" : null}</div>
     </section>
     <section> {props.review.rating} {props.review.reviewDate}
       <br></br>
