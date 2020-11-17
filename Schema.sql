@@ -17,16 +17,17 @@ CREATE TABLE Users (
   city VARCHAR(100),
   userState VARCHAR(20),
   reviews INT,
+  photoCount INT,
   elite BOOLEAN,
-  avatar VARCHAR(100)
+  avatar VARCHAR(500)
 );
 
 CREATE TABLE Reviews (
   revID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   rating TINYINT NOT NULL,
   reviewText VARCHAR(5000) NOT NULL,
-  userID INT NOT NULL,
-  resID INT NOT NULL,
+  userID INT,
+  resID INT,
   reviewDate VARCHAR(50),
   useful INT DEFAULT 0,
   funny INT DEFAULT 0,
@@ -42,7 +43,7 @@ CREATE TABLE Reviews (
 CREATE TABLE Photos (
   photoID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   revID INT,
-  imgPath VARCHAR(50) NOT NULL
+  imgPath VARCHAR(500) NOT NULL
   -- FOREIGN KEY (revID) REFERENCES Reviews(revID)
 );
 

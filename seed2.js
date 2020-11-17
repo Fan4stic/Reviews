@@ -24,7 +24,7 @@ createUsers = (amount) => {
 
 createReviews = (amount, users, restaurants) => {
   while (reviewCount < amount) {
-    let queryStr = `insert into Reviews values(0, ${Math.floor(Math.random() * 6)}, "${faker.lorem.paragraphs(2)}", ${Math.floor(Math.random() * users)}, ${Math.floor(Math.random() * restaurants)}, "${faker.date.past().toJSON().slice(0, 10)}", ${Math.floor(Math.random() * 100)}, ${Math.floor(Math.random() * 100)}, ${Math.floor(Math.random() * 100)}, "${faker.lorem.paragraph()}", "${faker.name.findName()}", "${faker.date.recent().toJSON().slice(0, 10)}")`;
+    let queryStr = `insert into Reviews values(0, ${Math.floor(Math.random() * 6)}, "${faker.lorem.paragraphs(3)}", ${Math.floor(Math.random() * users)}, ${Math.floor(Math.random() * restaurants)}, "${faker.date.past().toJSON().slice(0, 10)}", ${Math.floor(Math.random() * 100)}, ${Math.floor(Math.random() * 100)}, ${Math.floor(Math.random() * 100)}, "${faker.lorem.paragraph()}", "${faker.name.findName()}", "${faker.date.recent().toJSON().slice(0, 10)}")`;
     connection.asyncQuery(queryStr);
     reviewCount++;
   }
@@ -39,10 +39,10 @@ createPhotos = (amount, reviews) => {
 };
 //reviews and photos dont work because foreign keys... they dont exist before theyre created. async issues.
 
-createRestaurants(20);
-createUsers(20);
-createReviews(100, 20, 20);
-createPhotos(20, 100);
+createRestaurants(100);
+createUsers(100);
+createReviews(10000, 100, 100);
+createPhotos(1000, 10000);
 
 // let addFKConstraints = (() => {
 //   let queryStr1 = 'alter table Reviews add constraint fk_userID foreign key (userID) references Users(userID)';

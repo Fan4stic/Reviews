@@ -7,10 +7,10 @@ const divStyle = {
   fontWeight: '400',
   color: '#333',
   display: 'grid',
-  gridTemplateColumns: '1fr 2fr',
+  gridTemplateColumns: '1fr 1fr 4fr',
   gridTemplateRows: '1fr',
   gridColumnGap: '18px',
-  gridTemplateAreas: 'aside section',
+  gridTemplateAreas: 'aside details section',
   borderBottom: 'solid',
   borderBottomWidth: 'thin',
   padding:'20px'
@@ -26,14 +26,29 @@ const buttonStyle = {
   borderColor: 'lightgray',
   borderWidth: 'thin'
 };
+
+const avatar = {
+  width: '50px',
+  height: '50px',
+  borderRadius: '4px'
+};
+
 //need to style aside so it shows details to side of image
 //add conditional render images to bottom
 const ListItem = (props) => (
   <div style={divStyle}>
     <aside>
-      <img src="https://loremflickr.com/100/100" />
-      <div>username</div>
+      <img style={avatar} src={props.review.avatar} />
     </aside>
+    <section>
+      <div>{props.review.userName}</div>
+      <span>{props.review.city}{props.review.userState}</span>
+      <span>{props.review.friends}</span>
+      <span>{props.review.reviews}</span>
+      <span>{props.review.</span>
+      <span>{props.review.</span>
+
+    </section>
     <section> {props.review.rating} {props.review.reviewDate}
       <br></br>
       <div> {props.review.reviewText}</div>

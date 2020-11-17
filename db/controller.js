@@ -3,7 +3,8 @@ const connection = require('./index.js');
 module.exports = {
   get: async (req, res) => {
     let id = req.url.slice(17, -8);
-    let queryStr = `select * from reviews where resID = ${id}`;
+    //still dont know how i would get all the photos for a particular review if there were more than 1, has issue if multiple photos, it will send duplicate
+    let queryStr = `select * from restaurants inner join reviews using (resID) inner join users on reviews.userID = users.userID inner join photos on reviews.revID = photos.revID where resID = ${id} limit 10`;
       try {
         const result = await connection.asyncQuery(queryStr);
         // console.log(result);
