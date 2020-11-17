@@ -7,8 +7,8 @@
   color: black;
 }
 body {
-  font-family: sans-serif, arial;
-  width: 715px;
+  font-family: Helvetica Neue, sans-serif, arial;
+  width: 715px
 }
 .modal {
   position: fixed;

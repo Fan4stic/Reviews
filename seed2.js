@@ -16,7 +16,7 @@ createRestaurants = (amount) => {
 
 createUsers = (amount) => {
   while (userCount < amount) {
-    let queryStr = `insert into Users values (0, "${faker.name.findName()}", ${Math.floor(Math.random() * 500)}, "${faker.address.city()}", "${faker.address.state()}", ${Math.floor(Math.random() * 100)}, ${faker.random.boolean()}, "${faker.image.avatar()}")`;
+    let queryStr = `insert into Users values (0, "${faker.name.firstName()} ${faker.lorem.word(1).toUpperCase()}.", ${Math.floor(Math.random() * 500)}, "${faker.address.city()}", "${faker.address.state(1)}", ${Math.floor(Math.random() * 100)}, ${faker.random.boolean()}, "${faker.image.avatar()}")`;
     connection.asyncQuery(queryStr);
     userCount++;
   }
@@ -44,10 +44,14 @@ createUsers(100);
 createReviews(10000, 100, 100);
 createPhotos(1000, 10000);
 
+
+
 // let addFKConstraints = (() => {
+//   let querystr0 = 'set foriegn_key_checks=0';
 //   let queryStr1 = 'alter table Reviews add constraint fk_userID foreign key (userID) references Users(userID)';
 //   let queryStr2 = 'alter table Reviews add constraint fk_resID foreign key (resID) references Reviews(resID)';
 //   let queryStr3 = 'alter table Photos add constraint fk_revID foreign key (revID) references Users(revID)';
+//   connection.query(queryStr0);
 //   connection.query(queryStr1);
 //   connection.query(queryStr2);
 //   connection.query(queryStr3);
