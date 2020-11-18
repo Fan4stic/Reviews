@@ -8,7 +8,11 @@
 }
 body {
   font-family: Helvetica Neue, sans-serif, arial;
-  width: 715px
+  line-height:1.28571em;
+  width: 715px;
+}
+hr {
+  color: #e6e6e6
 }
 .modal {
   position: fixed;
