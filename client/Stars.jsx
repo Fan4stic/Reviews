@@ -6,33 +6,6 @@ const ratingStyle = {
   transition: "color 200ms"
 };
 
-const colors = {
-  option0: {
-    color: "#e3e0da",
-    rating: [1, 1.99]
-  },
-  option1: {
-    color: "#dbaa56",
-    rating: [1, 1.99]
-  },
-  option2: {
-    color: "#e6a435",
-    rating: [2, 2.99]
-  },
-  option3: {
-    color: "f59218",
-    rating: [3, 3.99]
-  },
-  option4: {
-    color: "#f5641b",
-    rating: [4, 4.99]
-  },
-  option5: {
-    color: "#d32323",
-    rating: [5]
-  },
-};
-
 const updateColor = (rating) => {
   if (rating < 1) {
     return "#e3e0da";
@@ -49,15 +22,6 @@ const updateColor = (rating) => {
   } else {
     return null;
   }
-};
-
-
-
-const getColorByRating = (score) => {
-  return Object.values(colors).find(({ rating }) => {
-    const [min, max] = rating;
-    return min <= score && score <= max;
-  });
 };
 
 const StarRating = () => {
