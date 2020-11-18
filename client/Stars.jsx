@@ -24,11 +24,10 @@ const updateColor = (rating) => {
   }
 };
 
-const StarRating = () => {
+const StarRating = (props) => {
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
 
-  // color={ratingValue <= (hover || rating) ? "orange" : "lightGray"}
   return (
     <div>
       {[...Array(5)].map((star, i ) => {

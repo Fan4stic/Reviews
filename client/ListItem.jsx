@@ -7,9 +7,9 @@ const divStyle = {
   gridTemplateRows: '1fr',
   gridColumnGap: '6px',
   gridTemplateAreas: 'aside section',
-  borderTop: '1px solid lightgray',
+  borderTop: '1px solid #f5f5f5',
   borderTopWidth: 'thin',
-  padding: '0px',
+  padding: '20px 0px 0px 20px',
   fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
   lineHeight: '20px',
   verticalAlign: 'baseline'
@@ -74,6 +74,24 @@ const reviewPhotoSmall = {
   margin: '4px'
 };
 
+const ratingToStars = (rating) => {
+  if (rating < 1) {
+    return "https://s3-us-west-1.amazonaws.com/fec.yelp/yelpStyle/Imageye+-+Styleguide/yelp_stars/web_and_ios/regular/regular_0.png";
+  } else if (rating < 2) {
+    return "https://s3-us-west-1.amazonaws.com/fec.yelp/yelpStyle/Imageye+-+Styleguide/yelp_stars/web_and_ios/regular/regular_1.png";
+  } else if (rating < 3) {
+    return "https://s3-us-west-1.amazonaws.com/fec.yelp/yelpStyle/Imageye+-+Styleguide/yelp_stars/web_and_ios/regular/regular_2.png";
+  } else if (rating < 4) {
+    return "https://s3-us-west-1.amazonaws.com/fec.yelp/yelpStyle/Imageye+-+Styleguide/yelp_stars/web_and_ios/regular/regular_3.png";
+  } else if (rating < 5) {
+    return "https://s3-us-west-1.amazonaws.com/fec.yelp/yelpStyle/Imageye+-+Styleguide/yelp_stars/web_and_ios/regular/regular_4.png";
+  } else if (rating < 6) {
+    return "https://s3-us-west-1.amazonaws.com/fec.yelp/yelpStyle/Imageye+-+Styleguide/yelp_stars/web_and_ios/regular/regular_5.png";
+  } else {
+    return null;
+  }
+};
+
 
 //need to style aside so it shows details to side of image
 //add conditional render images to bottom
@@ -89,7 +107,8 @@ const ListItem = (props) => (
         <div style={{color: '#d32323', fontSize: '14px'}}>{props.review.elite ? "Elite '2020" : null}</div>
       </div>
     </aside>
-    <section> {props.review.rating} {props.review.reviewDate}
+    <section>
+      <img src={ratingToStars(props.review.rating)}/> {props.review.reviewDate}
       <br></br>
       <div style={textStyle}> {props.review.reviewText}</div>
       <br></br>
