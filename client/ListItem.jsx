@@ -62,14 +62,14 @@ const detailStyle = {
 };
 
 const reviewPhotoLarge = {
-  maxHeight: '348px',
-  maxWidth: '348px',
+  height: '348px',
+  width: '348px',
   borderRadius: '4px'
 
 };
 const reviewPhotoSmall = {
-  maxHeight: '168px',
-  maxWidth: '168px',
+  height: '168px',
+  width: '168px',
   borderRadius: '4px',
   margin: '4px'
 };
@@ -93,7 +93,7 @@ const ListItem = (props) => (
       <br></br>
       <div style={textStyle}> {props.review.reviewText}</div>
       <br></br>
-      <img style={reviewPhotoLarge} src={props.review.imgPath} />
+      <img style={reviewPhotoLarge} src="https://loremflickr.com/320/460" />
       <img style={reviewPhotoSmall} src = "https://loremflickr.com/320/240" />
       <img style={reviewPhotoSmall} src = "https://loremflickr.com/320/240/food" />
       <div>

@@ -4,6 +4,7 @@ import ReviewList from './ReviewList.jsx';
 import StartReview from './StartReview.jsx';
 import Modal from './Modal.jsx';
 import Form from './Form.jsx';
+import Stars from './Stars.jsx';
 
 
 
@@ -28,6 +29,7 @@ class Reviews extends React.Component {
   render() {
     return (
       <div>
+        <Stars />
         <StartReview
           toggle={show => <img src="https://loremflickr.com/320/240/person" onClick={show}></img>}
           content={hide => (

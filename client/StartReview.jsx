@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const StartReview = ({toggle, content}) => {
-  const [isShown, setIsShown] = React.useState(false);
+  const [isShown, setIsShown] = useState(false);
   const hide = () => setIsShown(false);
   const show = () => setIsShown(true);
 
