@@ -26,14 +26,15 @@ const textStyle = {
 };
 
 const buttonStyle = {
-  margin: '5px',
+  margin: '15px 6px 15px 6px',
   padding: '0px 12px',
   height: '30px',
   color: 'gray',
   background: 'white',
   borderRadius: '4px',
   borderColor: 'lightgray',
-  borderWidth: 'thin'
+  borderWidth: 'thin',
+  boxShadow: 'none'
 };
 
 const avatar = {
@@ -99,7 +100,21 @@ const photoUrl = (n) => {
   return `https://s3-us-west-1.amazonaws.com/fec.yelp/SamsFood/Imageye+-+Sushi+Sam_s+Edomata+-+Takeout+_+Delivery+-+4522+Photos+_+2320+Reviews+-+Sushi+Bars+-+218+E+3rd+Ave_+San+Mateo_+CA+-+Restaurant+Reviews+-+Phone+Number+-+Menu+-+Yelp/300s+(` + randInt(n) + `).jpg`;
 };
 
+const dateStyle = {
+  color: '#757280',
+  fontSize: '14px',
+  verticalAlign: 'top',
+  padding: '8px'
+};
 
+const smallTextStyle = {
+  fontSize: '12px',
+  lineHeight: '18px'
+};
+const starStyle = {
+  width: '108px',
+  height: '20px'
+};
 //need to style aside so it shows details to side of image
 //add conditional render images to bottom
 const ListItem = (props) => (
@@ -109,13 +124,16 @@ const ListItem = (props) => (
       <div style={detailStyle}>
         <div style={{fontWeight: 'bold', fontSize: '14px'}}>{props.review.userName}</div>
         <div style={{fontSize: '14px'}}>{props.review.city}, {props.review.userState}</div>
-        <div style={detailStyle}>{props.review.friends}</div>
-        <div style={detailStyle}>{props.review.reviews}</div>
+        <div style={smallTextStyle}>{props.review.friends} friends</div>
+        <div style={smallTextStyle}>{props.review.reviews} reviews</div>
         <div style={{color: '#d32323', fontSize: '14px'}}>{props.review.elite ? "Elite '2020" : null}</div>
       </div>
     </aside>
     <section>
-      <img src={ratingToStars(props.review.rating)}/> {props.review.reviewDate}
+      <img style={starStyle} src={ratingToStars(props.review.rating)}/>
+      <span style={dateStyle}>{props.review.reviewDate.slice(5, 7) + '/' + props.review.reviewDate.slice(-2) + '/' + props.review.reviewDate.slice(0, 4)}
+      </span>
+      <br></br>
       <br></br>
       <div style={textStyle}> {props.review.reviewText}</div>
       <br></br>
