@@ -120,9 +120,16 @@ const ListItem = (props) => (
       <div style={textStyle}> {props.review.reviewText}</div>
       <br></br>
       <div>
-        <img style={reviewPhotoLarge} src={photoUrl(17)} />
+        {[...Array(randInt(4))].map((pic, i, arr) => {
+          // if ((arr.length === 1 || 3) && (i === 0) {
+
+          // }
+          return (
+            <img style={((arr.length !== 2) && (i === 0)) ? reviewPhotoLarge : reviewPhotoSmall} src ={photoUrl(17)} />);
+        })}
+        {/* <img style={reviewPhotoLarge} src={photoUrl(17)} />
         <img style={reviewPhotoSmall} src ={photoUrl(17)} />
-        <img style={reviewPhotoSmall} src ={photoUrl(17)} />
+        <img style={reviewPhotoSmall} src ={photoUrl(17)} /> */}
       </div>
       <div>
         <button style={buttonStyle}>Useful {props.review.useful}</button>
