@@ -54,6 +54,9 @@ class Reviews extends React.Component {
       .catch((err) => console.log(err));
   }
 
+  toggleButton() {
+    return val += 1;
+  }
 
 
   render() {

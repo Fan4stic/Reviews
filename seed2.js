@@ -42,7 +42,7 @@ createPhotos = (amount, reviews) => {
 createRestaurants(100);
 createUsers(100);
 createReviews(10000, 100, 100);
-createPhotos(1000, 10000);
+createPhotos(100, 100);
 
 
 
