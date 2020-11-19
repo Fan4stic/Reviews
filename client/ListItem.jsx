@@ -105,7 +105,7 @@ const photoUrl = (n) => {
 const ListItem = (props) => (
   <div style={divStyle}>
     <aside style={asideStyle}>
-      <img style={avatar} src={props.review.avatar} />
+      <img style={avatar} src="https://i.pravatar.cc/100" />
       <div style={detailStyle}>
         <div style={{fontWeight: 'bold', fontSize: '14px'}}>{props.review.userName}</div>
         <div style={{fontSize: '14px'}}>{props.review.city}, {props.review.userState}</div>
@@ -126,9 +126,9 @@ const ListItem = (props) => (
         })}
       </div>
       <div>
-        <button style={buttonStyle}>Useful {props.review.useful}</button>
-        <button style={buttonStyle}>Funny {props.review.funny}</button>
-        <button style={buttonStyle}>Cool {props.review.cool}</button>
+        <button name="useful" onClick={() => console.log(props)} style={buttonStyle}>Useful {props.review.useful}</button>
+        <button name="funny" style={buttonStyle}>Funny {props.review.funny}</button>
+        <button name="cool" style={buttonStyle}>Cool {props.review.cool}</button>
       </div>
     </section>
   </div>

@@ -5,6 +5,7 @@ import StartReview from './StartReview.jsx';
 import Modal from './Modal.jsx';
 import Form from './Form.jsx';
 import Stars from './Stars.jsx';
+import Pagination from './Pagination.jsx';
 
 const submitStyling = {
   height: '40px',
@@ -36,30 +37,54 @@ const startRevStyle = {
   verticalAlign: 'baseline'
 };
 
+// const indexOfLastReview = currentPage * reviewsPerPage;
+// const indexOfFirstReview = indexOfLastReview - reviewsPerPage;
+// const currentReviews = reviews.slice(indexOfFirstReview, indexOfLastReview);
+
 
 class Reviews extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      reviews: []
+      reviews: [],
+      currentReviews: [],
+      currentPage: 1,
+      reviewsPerPage: 10,
+      indexOfFirstReview: 0,
+      indexOfLastReview: 10,
+
     };
 
+    this.selectPage = this.selectPage.bind(this);
+    // this.toggleButton = this.toggleButton.bind(this);
   }
 
   componentDidMount() {
     axios.get('/api/restaurants/1/reviews')
       .then((info)=> {
-        this.setState({reviews: info.data});
+        this.setState({reviews: info.data, currentReviews: info.data.slice(0, 10)});
       })
       .catch((err) => console.log(err));
   }
 
-  toggleButton() {
-    return val += 1;
+  selectPage(e) {
+    // e.preventDefault;
+    let start = (e.target.value - 1) * 10;
+    let end = (e.target.value) * 10;
+    this.setState({currentReviews: this.state.reviews.slice(start, end)});
   }
+
+  // toggleButton(i) {
+  //   let rev = this.state.reviews;
+  //   rev[i][useful] = rev[i][useful] + 1;
+  //   this.setState({ reviews: rev });
+  // }
+
+
 
 
   render() {
+
     return (
       <div>
         <div style={startRevStyle}>
@@ -75,7 +100,8 @@ class Reviews extends React.Component {
           />
         </div>
         <div>
-          <ReviewList reviews={this.state.reviews}/>
+          <ReviewList toggleButton={this.toggleButton} reviews={this.state.currentReviews}/>
+          <Pagination selectPage={this.selectPage} reviewsPerPage={10} totalReviews={this.state.reviews.length} />
         </div>
       </div>
     );

@@ -5,8 +5,8 @@ import ListItem from './ListItem.jsx';
 const ReviewList = (props) => (
   <div>
     <ul>
-      {props.reviews.map((review) =>
-        <ListItem key={review.revID} review={review} />)}
+      {props.reviews.map((review, i) =>
+        <ListItem key={review.revID} index={i} review={review} toggleButton={props.toggleButton} />)}
       <hr />
     </ul>
   </div>
