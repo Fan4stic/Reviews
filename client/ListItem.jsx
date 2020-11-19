@@ -92,6 +92,13 @@ const ratingToStars = (rating) => {
   }
 };
 
+const randInt = (n) => Math.floor(Math.random() * n);
+//use 4 to determine how many photos
+
+const photoUrl = (n) => {
+  return `https://s3-us-west-1.amazonaws.com/fec.yelp/SamsFood/Imageye+-+Sushi+Sam_s+Edomata+-+Takeout+_+Delivery+-+4522+Photos+_+2320+Reviews+-+Sushi+Bars+-+218+E+3rd+Ave_+San+Mateo_+CA+-+Restaurant+Reviews+-+Phone+Number+-+Menu+-+Yelp/300s+(` + randInt(n) + `).jpg`;
+};
+
 
 //need to style aside so it shows details to side of image
 //add conditional render images to bottom
@@ -112,9 +119,9 @@ const ListItem = (props) => (
       <br></br>
       <div style={textStyle}> {props.review.reviewText}</div>
       <br></br>
-      <img style={reviewPhotoLarge} src="https://loremflickr.com/320/460" />
-      <img style={reviewPhotoSmall} src = "https://loremflickr.com/320/240" />
-      <img style={reviewPhotoSmall} src = "https://loremflickr.com/320/240/food" />
+      <img style={reviewPhotoLarge} src="https://s3-us-west-1.amazonaws.com/fec.yelp/ebisuFood/Imageye+-+Photos+for+Ebisu+-+Yelp/258s+(3).jpg" />
+      <img style={reviewPhotoSmall} src = "https://s3-us-west-1.amazonaws.com/fec.yelp/ebisuFood/Imageye+-+Photos+for+Ebisu+-+Yelp/258s+(2).jpg" />
+      <img style={reviewPhotoSmall} src = "https://s3-us-west-1.amazonaws.com/fec.yelp/ebisuFood/Imageye+-+Photos+for+Ebisu+-+Yelp/258s+(1).jpg" />
       <div>
         <button style={buttonStyle}>Useful {props.review.useful}</button>
         <button style={buttonStyle}>Funny {props.review.funny}</button>
