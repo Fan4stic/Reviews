@@ -119,9 +119,11 @@ const ListItem = (props) => (
       <br></br>
       <div style={textStyle}> {props.review.reviewText}</div>
       <br></br>
-      <img style={reviewPhotoLarge} src="https://s3-us-west-1.amazonaws.com/fec.yelp/ebisuFood/Imageye+-+Photos+for+Ebisu+-+Yelp/258s+(3).jpg" />
-      <img style={reviewPhotoSmall} src = "https://s3-us-west-1.amazonaws.com/fec.yelp/ebisuFood/Imageye+-+Photos+for+Ebisu+-+Yelp/258s+(2).jpg" />
-      <img style={reviewPhotoSmall} src = "https://s3-us-west-1.amazonaws.com/fec.yelp/ebisuFood/Imageye+-+Photos+for+Ebisu+-+Yelp/258s+(1).jpg" />
+      <div>
+        <img style={reviewPhotoLarge} src={photoUrl(17)} />
+        <img style={reviewPhotoSmall} src ={photoUrl(17)} />
+        <img style={reviewPhotoSmall} src ={photoUrl(17)} />
+      </div>
       <div>
         <button style={buttonStyle}>Useful {props.review.useful}</button>
         <button style={buttonStyle}>Funny {props.review.funny}</button>
