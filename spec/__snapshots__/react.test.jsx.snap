@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reviews should render 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "display": "grid",
+        "fontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+        "gridColumnGap": "6px",
+        "gridTemplateAreas": "aside section",
+        "gridTemplateColumns": "1fr 2fr",
+        "gridTemplateRows": "1fr",
+        "lineHeight": "20px",
+        "margin": "20px 0px 0px 20px",
+        "padding": "20px 0px 0px 20px",
+        "verticalAlign": "baseline",
+      }
+    }
+  >
+    <img
+      src="https://s3-us-west-1.amazonaws.com/fec.yelp/yelpStyle/Imageye+-+Styleguide/empty_profile%402x.yji-f52f768da99ad105f2d4ad4190f25c31.png"
+      style={
+        Object {
+          "height": "68px",
+          "width": "148px",
+        }
+      }
+    />
+    <StartReview
+      content={[Function]}
+      toggle={[Function]}
+    />
+  </div>
+  <div>
+    <ReviewList
+      reviews={Array []}
+    />
+    <Pagination
+      reviewsPerPage={10}
+      selectPage={[Function]}
+      totalReviews={0}
+    />
+  </div>
+</div>
+`;
