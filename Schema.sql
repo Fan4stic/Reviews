@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS yelp;
+DROP DATABASE IF EXISTS yelp_reviews;
 
-CREATE DATABASE yelp;
+CREATE DATABASE yelp_reviews;
 
-USE yelp;
+USE yelp_reviews;
 
 CREATE TABLE Restaurants (
   resID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
