@@ -1,6 +1,20 @@
 import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 
+// const reviewBoxStyle = {
+//   height: "101px",
+//   width: "416px",
+//   padding: "24px",
+//   border: "1px",
+//   backgroundColor: "#f5f5f5",
+//   borderRadius: "4px"
+// };
+
+// const textStyle = {
+//   textAlign: "center",
+//   color: "#00838f"
+// };
+
 const ratingStyle = {
   cursor: "pointer",
   transition: "color 200ms"
@@ -29,7 +43,7 @@ const StarRating = (props) => {
   const [hover, setHover] = useState(null);
 
   return (
-    <div>
+    <div >
       {[...Array(5)].map((star, i ) => {
         const ratingValue = i + 1;
         return (
@@ -43,6 +57,9 @@ const StarRating = (props) => {
           </label>
         );
       })}
+      <br></br>
+      {/* <hr /> */}
+      {/* <span style={textStyle}>Start your review of Restaurant</span> */}
     </div>
   );
 

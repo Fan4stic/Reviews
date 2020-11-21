@@ -20,13 +20,14 @@ const submitStyling = {
 };
 const modalStyle =  {
   position: 'fixed',
-  top: '200px',
+  top: '100px',
   padding: '24px',
   left: '200px',
   backgroundColor: 'white',
   border: '1px solid grey',
   borderRadius: '3px',
-  float: 'center'
+  float: 'center',
+  verticalAlign: 'top'
 };
 
 const nameStyle = {
@@ -41,7 +42,7 @@ const Modal = ({handleClose, show, resname, children}) => {
   const showHide = show ? "modal display-block" : "modal display-none";
 
   return (
-    <div className="modal-main">
+    <div style={modalStyle}>
       <span style={nameStyle}>{resname}</span>
       {children}
       <Form />

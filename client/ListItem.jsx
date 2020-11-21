@@ -144,7 +144,7 @@ const ListItem = (props) => (
         })}
       </div>
       <div>
-        <button name="useful" onClick={() => console.log(props)} style={buttonStyle}>Useful {props.review.useful}</button>
+        <button name="useful" onClick={() => props.toggleButton()} style={buttonStyle}>Useful {props.review.useful}</button>
         <button name="funny" style={buttonStyle}>Funny {props.review.funny}</button>
         <button name="cool" style={buttonStyle}>Cool {props.review.cool}</button>
       </div>

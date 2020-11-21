@@ -37,7 +37,8 @@ class Reviews extends React.Component {
       reviewsPerPage: 10,
       indexOfFirstReview: 0,
       indexOfLastReview: 10,
-      show: false
+      show: false,
+      plus: false
 
     };
 
@@ -45,7 +46,7 @@ class Reviews extends React.Component {
     this.showModal = this.showModal.bind(this);
     this.hideModal = this.hideModal.bind(this);
 
-    // this.toggleButton = this.toggleButton.bind(this);
+    this.toggleButton = this.toggleButton.bind(this);
   }
 
   componentDidMount() {
@@ -70,11 +71,10 @@ class Reviews extends React.Component {
   hideModal() {
     this.setState({ show: false });
   }
-  // toggleButton(i) {
-  //   let rev = this.state.reviews;
-  //   rev[i][useful] = rev[i][useful] + 1;
-  //   this.setState({ reviews: rev });
-  // }
+  toggleButton(e) {
+    e.preventDefault;
+    this.setState({ plus: !this.state.plus });
+  }
 
 
 
@@ -87,8 +87,6 @@ class Reviews extends React.Component {
           <img style={{ width: "148px", height: "68px" }}src="https://s3-us-west-1.amazonaws.com/fec.yelp/yelpStyle/Imageye+-+Styleguide/empty_profile%402x.yji-f52f768da99ad105f2d4ad4190f25c31.png"/>
           <div ><Stars showModal={this.showModal}/></div>
           {this.state.show ? <Modal resname={this.state.reviews[0].resName} handleClose={this.hideModal}>
-            {/* <Form reviews={this.state.reviews}/>
-            <button style={submitStyling} onClick={this.hideModal}>Post Review</button> */}
           </Modal> : null}
         </div>
         <div>
