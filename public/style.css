@@ -1,0 +1,27 @@
+.title {
+  font-size: 20px;
+  font-weight: 300;
+  background-color: lightskyblue;
+  text-align: left;
+  padding: 10px 10px;
+  color: black;
+}
+body {
+  font-family: Open Sans, Helvetica Neue, sans-serif, arial;
+  font-weight: 400;
+  
+  line-height:20px;
+  width: 715px;
+}
+hr {
+  color: #e6e6e6
+}
+.modal {
+  position: fixed;
+  top: 200px;
+  padding: 24px;
+  left: 200px;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 3px;
+}
