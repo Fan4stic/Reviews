@@ -140,7 +140,7 @@ const ListItem = (props) => (
       <div>
         {[...Array(randInt(4))].map((pic, i, arr) => {
           return (
-            <img style={((arr.length !== 2) && (i === 0)) ? reviewPhotoLarge : reviewPhotoSmall} src ={photoUrl(17)} />);
+            <img key={i} style={((arr.length !== 2) && (i === 0)) ? reviewPhotoLarge : reviewPhotoSmall} src ={photoUrl(17)} />);
         })}
       </div>
       <div>
