@@ -33,8 +33,16 @@ const StarRating = (props) => {
       {[...Array(5)].map((star, i ) => {
         const ratingValue = i + 1;
         return (
+<<<<<<< Updated upstream
           <label>
             <input style={{display: 'none' }} type="radio" name="rating" value={ratingValue} onClick={() => setRating(ratingValue)} />
+=======
+          <label key={i}>
+            <input style={{display: 'none' }} type="radio" name="rating" value={ratingValue} onClick={() => {
+              setRating(ratingValue);
+              props.showModal();
+            }} />
+>>>>>>> Stashed changes
             <FaStar style={ratingStyle} size={40} key={i} color={ratingValue <= (hover || rating) ? updateColor(hover || rating) : "lightgray"} onMouseEnter={() => setHover(ratingValue)} onMouseLeave={() => setHover(null)}
             />
           </label>
