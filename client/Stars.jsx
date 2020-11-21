@@ -34,7 +34,10 @@ const StarRating = (props) => {
         const ratingValue = i + 1;
         return (
           <label>
-            <input style={{display: 'none' }} type="radio" name="rating" value={ratingValue} onClick={() => setRating(ratingValue)} />
+            <input style={{display: 'none' }} type="radio" name="rating" value={ratingValue} onClick={() => {
+              setRating(ratingValue);
+              props.showModal();
+            }} />
             <FaStar style={ratingStyle} size={40} key={i} color={ratingValue <= (hover || rating) ? updateColor(hover || rating) : "lightgray"} onMouseEnter={() => setHover(ratingValue)} onMouseLeave={() => setHover(null)}
             />
           </label>
