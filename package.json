@@ -9,7 +9,7 @@
   },
   "scripts": {
     "webpack": "webpack -w",
-    "seed": "node seed2.js",
+    "seed": "node seed.js",
     "start": "nodemon server/server.js",
     "test": "jest"
   },
