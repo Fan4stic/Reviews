@@ -60,7 +60,7 @@ createUsers(100);
 createReviews(10000, 100, 100);
 createPhotos(100, 100);
 
-connection.end();
+
 //need to run these commands manually to add foreign keys back
 
 // let addFKConstraints = (() => {
