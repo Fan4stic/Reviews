@@ -86,7 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-<<<<<<< Updated upstream
 /***/ "./client/Form.jsx":
 /*!*************************!*\
   !*** ./client/Form.jsx ***!
@@ -183,14 +182,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 
 /***/ }),
 
-=======
->>>>>>> Stashed changes
 /***/ "./client/index.jsx":
 /*!**************************!*\
   !*** ./client/index.jsx ***!
   \**************************/
 /*! no exports provided */
-<<<<<<< Updated upstream
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -709,11 +705,6 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 
 "use strict";
 eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs/scheduler-tracing.development.js */ \"./node_modules/scheduler/cjs/scheduler-tracing.development.js\");\n}\n\n\n//# sourceURL=webpack:///./node_modules/scheduler/tracing.js?");
-=======
-/***/ (function(module, exports) {
-
-eval("throw new Error(\"Module build failed (from ./node_modules/babel-loader/lib/index.js):\\nError: ENOENT: no such file or directory, open '/Users/marcuslee/Desktop/HR/frontend-capstone/client/index.jsx'\");\n\n//# sourceURL=webpack:///./client/index.jsx?");
->>>>>>> Stashed changes
 
 /***/ })
 
