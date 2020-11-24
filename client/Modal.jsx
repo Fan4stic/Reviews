@@ -48,7 +48,6 @@ const Modal = ({handleClose, show, resname, children}) => {
       <Form />
       <button style={submitStyling} onClick={handleClose}>Submit Review</button>
     </div>
-    // document.getElementById('modal-root')
   );
 };
 
