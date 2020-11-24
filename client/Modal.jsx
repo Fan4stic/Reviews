@@ -5,8 +5,7 @@ const Modal = ({children}) => (
   ReactDOM.createPortal(
     <div className="modal">
       {children}
-    </div>,
-    document.getElementById('modal-root')
+    </div>
   )
 );
 
