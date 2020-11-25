@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Stars from './Stars.jsx';
 
 const reviewBoxStyle = {
   height: "101px",
@@ -14,17 +15,14 @@ const textStyle = {
   color: "#00838f"
 
 };
-const StartReview = ({toggle, content}) => {
-  const [isShown, setIsShown] = useState(false);
-  const hide = () => setIsShown(false);
-  const show = () => setIsShown(true);
+const StartReview = (props) => {
+
 
   return (
     <div style={reviewBoxStyle}>
-      {toggle(show)}
-      {isShown && content(hide)}
+      <Stars showModal={props.showModal}/>
       <hr/>
-      <span style={textStyle}>Start your review of Restaurant here</span>
+      <span style={textStyle}>Start your review of  here</span>
     </div>
   );
 };

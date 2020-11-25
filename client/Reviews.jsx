@@ -85,7 +85,10 @@ class Reviews extends React.Component {
       <div>
         <div style={startRevStyle}>
           <img style={{ width: "148px", height: "68px" }}src="https://s3-us-west-1.amazonaws.com/fec.yelp/yelpStyle/Imageye+-+Styleguide/empty_profile%402x.yji-f52f768da99ad105f2d4ad4190f25c31.png"/>
-          <div ><Stars showModal={this.showModal}/></div>
+          <div >
+            <StartReview restaurant={this.state.reviews[0]} showModal={this.showModal} />
+            {/* <Stars showModal={this.showModal}/> */}
+          </div>
           {this.state.show ? <Modal resname={this.state.reviews[0].resName} handleClose={this.hideModal}>
           </Modal> : null}
         </div>
