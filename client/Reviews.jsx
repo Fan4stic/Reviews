@@ -26,7 +26,7 @@ const startRevStyle = {
 // const indexOfFirstReview = indexOfLastReview - reviewsPerPage;
 // const currentReviews = reviews.slice(indexOfFirstReview, indexOfLastReview);
 
-
+// could use 'loaded' as  a property on state which starts as false and after componentDidMount, will turn to true.
 class Reviews extends React.Component {
   constructor(props) {
     super(props);
@@ -38,7 +38,8 @@ class Reviews extends React.Component {
       indexOfFirstReview: 0,
       indexOfLastReview: 10,
       show: false,
-      plus: false
+      plus: false,
+      loaded: false
 
     };
 
@@ -54,6 +55,7 @@ class Reviews extends React.Component {
       .then((info)=> {
         this.setState({reviews: info.data, currentReviews: info.data.slice(0, 10)});
       })
+      .then(()=> this.setState({loaded: true}))
       .catch((err) => console.log(err));
   }
 
@@ -86,7 +88,7 @@ class Reviews extends React.Component {
         <div style={startRevStyle}>
           <img style={{ width: "148px", height: "68px" }}src="https://s3-us-west-1.amazonaws.com/fec.yelp/yelpStyle/Imageye+-+Styleguide/empty_profile%402x.yji-f52f768da99ad105f2d4ad4190f25c31.png"/>
           <div >
-            <StartReview restaurant={this.state.reviews[0]} showModal={this.showModal} />
+            <StartReview loaded={this.state.loaded} resname={this.state.loaded ? this.state.reviews[0].resName : 'loading'} showModal={this.showModal} />
             {/* <Stars showModal={this.showModal}/> */}
           </div>
           {this.state.show ? <Modal resname={this.state.reviews[0].resName} handleClose={this.hideModal}>

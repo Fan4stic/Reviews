@@ -22,7 +22,7 @@ const StartReview = (props) => {
     <div style={reviewBoxStyle}>
       <Stars showModal={props.showModal}/>
       <hr/>
-      <span style={textStyle}>Start your review of  here</span>
+      <span style={textStyle}>Start your review of restaurant {props.loaded ? props.resName : 'loading'} here</span>
     </div>
   );
 };
