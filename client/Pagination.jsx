@@ -43,6 +43,11 @@ const pageButtonStyle = {
   cursor: 'pointer'
 };
 
+const pageInfoStyle = {
+  color: '#757280',
+  textAlign: 'right',
+
+}
 //if pagenumber greater than 5 make pagenumbers array only from 5 below to 5 above with currentpage in bold and
 
 const Pagination = ({ reviewsPerPage, totalReviews, selectPage, currentPage }) => {
@@ -77,14 +82,19 @@ const Pagination = ({ reviewsPerPage, totalReviews, selectPage, currentPage }) =
       <hr/>
       <div style={pageContainer} id='paginationContainer'>
         {/* <button style={sideButton} onClick={()=> console.log('click' )}> */}
-        <svg style={sideButton} onClick={()=> console.log('click' )} xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="icon_svg"><path d="M14.25 17.58a1 1 0 01-.71-.3L9 12.7a1 1 0 010-1.4l4.5-4.58A1 1 0 0115 6.7a1 1 0 010 1.42L11.15 12 15 15.88a1 1 0 010 1.42 1 1 0 01-.75.28z"/></svg>
+        <svg style={sideButton} value={currentPage - 1}onClick={selectPage} xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="icon_svg"><path d="M14.25 17.58a1 1 0 01-.71-.3L9 12.7a1 1 0 010-1.4l4.5-4.58A1 1 0 0115 6.7a1 1 0 010 1.42L11.15 12 15 15.88a1 1 0 010 1.42 1 1 0 01-.75.28z"/></svg>
         {/* </button> */}
         {pageNumbers.map((number, i) => (
           <button style={pageButtonStyle} onClick={selectPage} key={number} value={currentPage > 5 ? i + currentPage - 4 : i + 1}>
             {number}
           </button>
         ))}
-        <svg onClick={()=> console.log('click' )} style={sideButton} xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="icon_svg"><path d="M9.75 17.58a1 1 0 01-.7-.28 1 1 0 010-1.42l3.8-3.88L9 8.12a1 1 0 111.41-1.42L15 11.3a1 1 0 010 1.4l-4.5 4.58a1 1 0 01-.75.3z"/></svg>
+        <button value={parseInt(currentPage + 1)} onClick={selectPage} style={sideButton} >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="icon_svg"><path d="M9.75 17.58a1 1 0 01-.7-.28 1 1 0 010-1.42l3.8-3.88L9 8.12a1 1 0 111.41-1.42L15 11.3a1 1 0 010 1.4l-4.5 4.58a1 1 0 01-.75.3z"/></svg>
+        </button>
+      </div>
+      <div style={pageInfoStyle}>
+        {currentPage} of {Math.ceil(totalReviews / reviewsPerPage)}
       </div>
       <hr/>
     </div>
