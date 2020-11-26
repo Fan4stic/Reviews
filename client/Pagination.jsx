@@ -27,7 +27,8 @@ const sideButton = {
   backgroundColor: 'transparent',
   border: 'none',
   verticalAlign: 'center',
-  padding: '7px'
+  padding: '7px',
+  fill: '#757280',
 };
 
 const pageButtonStyle = {
@@ -38,17 +39,38 @@ const pageButtonStyle = {
   verticalAlign: 'center',
   fontFamily: 'Open Sans, Helvetica Neue, sans-serif, arial',
   fontSize: '16px',
+  fontWeight: '400',
   cursor: 'pointer'
 };
 
+//if pagenumber greater than 5 make pagenumbers array only from 5 below to 5 above with currentpage in bold and
 
-const Pagination = ({ reviewsPerPage, totalReviews, selectPage }) => {
+const Pagination = ({ reviewsPerPage, totalReviews, selectPage, currentPage }) => {
   const pageNumbers = [];
 
-  for (var i = 1; i <= Math.ceil(totalReviews / reviewsPerPage); i++) {
-    pageNumbers.push(i);
-
+  //change this logic to use curent page and do 5 below and 5 above if over 5
+  if (currentPage < 5) {
+    let hiPage = 10;
+    let totalPages = 10;
+    if (Math.ceil(totalReviews / reviewsPerPage) < 10) {
+      hiPage = Math.ceil(totalReviews / reviewsPerPage);
+    }
+    for (var i = 1; i <= hiPage; i++) {
+      pageNumbers.push(i);
+    }
+  } else {
+    let hiPage = currentPage + 5;
+    let totalPages = Math.ceil(totalReviews / reviewsPerPage);
+    if (totalPages < currentPage + 5) {
+      hiPage = totalPages;
+      console.log(hiPage);
+    }
+    for (var i = currentPage - 4; i <= hiPage; i++) {
+      pageNumbers.push(i);
+    }
   }
+
+
 
   return (
     <div>
@@ -58,7 +80,7 @@ const Pagination = ({ reviewsPerPage, totalReviews, selectPage }) => {
         <svg style={sideButton} onClick={()=> console.log('click' )} xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="icon_svg"><path d="M14.25 17.58a1 1 0 01-.71-.3L9 12.7a1 1 0 010-1.4l4.5-4.58A1 1 0 0115 6.7a1 1 0 010 1.42L11.15 12 15 15.88a1 1 0 010 1.42 1 1 0 01-.75.28z"/></svg>
         {/* </button> */}
         {pageNumbers.map((number, i) => (
-          <button style={pageButtonStyle} onClick={selectPage} key={number} value={i + 1}>
+          <button style={pageButtonStyle} onClick={selectPage} key={number} value={currentPage > 5 ? i + currentPage - 4 : i + 1}>
             {number}
           </button>
         ))}

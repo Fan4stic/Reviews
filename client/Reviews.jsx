@@ -51,7 +51,7 @@ class Reviews extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/api/restaurants/1/reviews')
+    axios.get('/api/restaurants/7/reviews')
       .then((info)=> {
         this.setState({reviews: info.data, currentReviews: info.data.slice(0, 10)});
       })
@@ -63,7 +63,7 @@ class Reviews extends React.Component {
     // e.preventDefault;
     let start = (e.target.value - 1) * 10;
     let end = (e.target.value) * 10;
-    this.setState({currentReviews: this.state.reviews.slice(start, end)});
+    this.setState({currentReviews: this.state.reviews.slice(start, end), currentPage: parseInt(e.target.value)});
   }
 
   showModal() {
@@ -77,6 +77,8 @@ class Reviews extends React.Component {
     e.preventDefault;
     this.setState({ plus: !this.state.plus });
   }
+
+  
 
   render() {
     return (
@@ -92,7 +94,7 @@ class Reviews extends React.Component {
         </div>
         <div>
           <ReviewList toggleButton={this.toggleButton} reviews={this.state.currentReviews}/>
-          <Pagination selectPage={this.selectPage} reviewsPerPage={10} totalReviews={this.state.reviews.length} />
+          <Pagination currentPage={this.state.currentPage} selectPage={this.selectPage} reviewsPerPage={10} totalReviews={this.state.reviews.length} />
         </div>
       </div>
     );
