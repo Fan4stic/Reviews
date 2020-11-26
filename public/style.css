@@ -25,3 +25,17 @@ hr {
   border: 1px solid grey;
   border-radius: 3px;
 }
+/* 
+.paginationContainer {
+  -webkit-box-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: flex;
+  height: 30px;
+  -webkit-box-pack: center;
+  justify-content: center;
+  min-width: 26px;
+  padding: 0 6px;
+} */
+

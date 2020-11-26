@@ -78,11 +78,7 @@ class Reviews extends React.Component {
     this.setState({ plus: !this.state.plus });
   }
 
-
-
-
   render() {
-
     return (
       <div>
         <div style={startRevStyle}>
