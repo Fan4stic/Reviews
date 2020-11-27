@@ -46,8 +46,8 @@ class Reviews extends React.Component {
     this.selectPage = this.selectPage.bind(this);
     this.showModal = this.showModal.bind(this);
     this.hideModal = this.hideModal.bind(this);
-
     this.toggleButton = this.toggleButton.bind(this);
+    
   }
 
   componentDidMount() {
@@ -78,7 +78,7 @@ class Reviews extends React.Component {
     this.setState({ plus: !this.state.plus });
   }
 
-  
+
 
   render() {
     return (
