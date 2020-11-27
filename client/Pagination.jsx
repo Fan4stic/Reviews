@@ -43,11 +43,23 @@ const pageButtonStyle = {
   cursor: 'pointer'
 };
 
+const currPageStyle = {
+  backgroundColor: 'transparent',
+  border: 'none',
+  padding: '10px',
+  color: '#757280',
+  verticalAlign: 'center',
+  fontFamily: 'Open Sans, Helvetica Neue, sans-serif, arial',
+  fontSize: '16px',
+  fontWeight: '600',
+  cursor: 'pointer'
+};
+
+
 const pageInfoStyle = {
   color: '#757280',
   textAlign: 'right',
-
-}
+};
 //if pagenumber greater than 5 make pagenumbers array only from 5 below to 5 above with currentpage in bold and
 
 const Pagination = ({ reviewsPerPage, totalReviews, selectPage, currentPage }) => {
@@ -81,11 +93,13 @@ const Pagination = ({ reviewsPerPage, totalReviews, selectPage, currentPage }) =
     <div>
       <hr/>
       <div style={pageContainer} id='paginationContainer'>
-        {/* <button style={sideButton} onClick={()=> console.log('click' )}> */}
-        <svg style={sideButton} value={currentPage - 1}onClick={selectPage} xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="icon_svg"><path d="M14.25 17.58a1 1 0 01-.71-.3L9 12.7a1 1 0 010-1.4l4.5-4.58A1 1 0 0115 6.7a1 1 0 010 1.42L11.15 12 15 15.88a1 1 0 010 1.42 1 1 0 01-.75.28z"/></svg>
-        {/* </button> */}
+        <button value={parseInt(currentPage - 1)} style={sideButton} onClick={selectPage}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="icon_svg">
+            <path d="M14.25 17.58a1 1 0 01-.71-.3L9 12.7a1 1 0 010-1.4l4.5-4.58A1 1 0 0115 6.7a1 1 0 010 1.42L11.15 12 15 15.88a1 1 0 010 1.42 1 1 0 01-.75.28z"/>
+          </svg>
+        </button>
         {pageNumbers.map((number, i) => (
-          <button style={pageButtonStyle} onClick={selectPage} key={number} value={currentPage > 5 ? i + currentPage - 4 : i + 1}>
+          <button style={pageButtonStyle} onClick={selectPage} key={number + 1} value={currentPage > 5 ? i + currentPage - 4 : i + 1}>
             {number}
           </button>
         ))}
