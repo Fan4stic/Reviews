@@ -11,5 +11,4 @@ const ReviewList = (props) => (
     </ul>
   </div>
 );
-//could slice the array and map only those... to create pages
 export default ReviewList;
