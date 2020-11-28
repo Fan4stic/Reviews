@@ -2,11 +2,13 @@ const express = require('express');
 const path = require('path');
 const controller = require('../db/controller.js');
 const model = require('../db/model.js');
+const compression = require('compression');
 
 const app = express();
 const port = 3000;
 
 app.use(express.json());
+app.use(compression());
 
 //for some reason this isnt working with path
 // app.use(express.static(path.join(__dirname, 'public')));
