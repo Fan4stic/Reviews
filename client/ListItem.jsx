@@ -176,7 +176,7 @@ const ListItem = (props) => (
         })}
       </div>
       <div>
-        <button name="useful" onClick={(e) => props.toggleButton(e)} style={props.plus ? buttonClicked : buttonStyle}>
+        <button name="useful" onClick={(e) => props.toggleButton(e)} style={props.plus && props.key === props.revID ? buttonClicked : buttonStyle}>
           <svg style={buttonSVG} xmlns="http://www.w3.org/2000/svg" width="16" height="16" className="icon_svg"><path d="M8 1a7 7 0 110 14A7 7 0 018 1zm0 2a5 5 0 100 10A5 5 0 008 3zM4.785 5.803A3.5 3.5 0 1110 10.06v.74a1.5 1.5 0 01-1.5 1.5h-1A1.5 1.5 0 016 10.8v-.74a3.5 3.5 0 01-1.215-4.257zM8 5.7a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/></svg>
           Useful {props.plus ? props.review.useful + 1 : props.review.useful}
         </button>
