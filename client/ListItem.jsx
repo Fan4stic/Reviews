@@ -66,15 +66,14 @@ const reviewPhotoLarge = {
   height: '348px',
   width: '348px',
   borderRadius: '4px'
-
 };
+
 const reviewPhotoSmall = {
   height: '168px',
   width: '168px',
   borderRadius: '4px',
   margin: '4px'
 };
-
 
 const ratingToStars = (rating) => {
   if (rating < 1) {
@@ -118,21 +117,24 @@ const starStyle = {
 };
 
 const svgStyle = {
-  padding: ' 0px 5px 0px 5px',
+  padding: ' 0px',
+  margin: '0px 5px',
   verticalAlign: 'bottom',
   fill: 'rgb(102, 102, 102)'
 };
 
 const buttonSVG = {
-  padding: ' 0px 5px 0px 5px',
+  padding: ' 0px',
+  margin: '0px 5px',
   verticalAlign: 'bottom',
+
 };
 
 const buttonClicked = {
   backgroundColor: 'gray',
   fontWeight: '700',
   color: 'teal'
-}
+};
 //need to style aside so it shows details to side of image
 //add conditional render images to bottom
 const ListItem = (props) => (
