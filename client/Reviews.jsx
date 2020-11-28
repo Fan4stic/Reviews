@@ -8,6 +8,9 @@ import Stars from './Stars.jsx';
 import Pagination from './Pagination.jsx';
 
 
+const wholeContainer = {
+  width: '715px'
+};
 
 const startRevStyle = {
   margin: '20px 0px 0px 20px',
@@ -47,7 +50,7 @@ class Reviews extends React.Component {
     this.showModal = this.showModal.bind(this);
     this.hideModal = this.hideModal.bind(this);
     this.toggleButton = this.toggleButton.bind(this);
-    
+
   }
 
   componentDidMount() {
@@ -60,10 +63,13 @@ class Reviews extends React.Component {
   }
 
   selectPage(e) {
-    // e.preventDefault;
+    e.preventDefault;
     let start = (e.target.value - 1) * 10;
     let end = (e.target.value) * 10;
     this.setState({currentReviews: this.state.reviews.slice(start, end), currentPage: parseInt(e.target.value)});
+    window.scrollTo({
+      top: 0
+    });
   }
 
   showModal() {
@@ -82,7 +88,7 @@ class Reviews extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={wholeContainer}>
         <div style={startRevStyle}>
           <img style={{ width: "148px", height: "68px" }}src="https://s3-us-west-1.amazonaws.com/fec.yelp/yelpStyle/Imageye+-+Styleguide/empty_profile%402x.yji-f52f768da99ad105f2d4ad4190f25c31.png"/>
           <div >
