@@ -99,7 +99,7 @@ class Reviews extends React.Component {
           </Modal> : null}
         </div>
         <div>
-          <ReviewList toggleButton={this.toggleButton} reviews={this.state.currentReviews}/>
+          <ReviewList toggleButton={this.toggleButton} reviews={this.state.currentReviews} plus={this.state.plus} />
           <Pagination currentPage={this.state.currentPage} selectPage={this.selectPage} reviewsPerPage={10} totalReviews={this.state.reviews.length} />
         </div>
       </div>

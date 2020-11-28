@@ -75,6 +75,7 @@ const reviewPhotoSmall = {
   margin: '4px'
 };
 
+
 const ratingToStars = (rating) => {
   if (rating < 1) {
     return "https://s3-us-west-1.amazonaws.com/fec.yelp/yelpStyle/Imageye+-+Styleguide/yelp_stars/web_and_ios/regular/regular_0.png";
@@ -126,6 +127,12 @@ const buttonSVG = {
   padding: ' 0px 5px 0px 5px',
   verticalAlign: 'bottom',
 };
+
+const buttonClicked = {
+  backgroundColor: 'gray',
+  fontWeight: '700',
+  color: 'teal'
+}
 //need to style aside so it shows details to side of image
 //add conditional render images to bottom
 const ListItem = (props) => (
@@ -169,9 +176,9 @@ const ListItem = (props) => (
         })}
       </div>
       <div>
-        <button name="useful" onClick={() => props.toggleButton()} style={buttonStyle}>
+        <button name="useful" onClick={(e) => props.toggleButton(e)} style={props.plus ? buttonClicked : buttonStyle}>
           <svg style={buttonSVG} xmlns="http://www.w3.org/2000/svg" width="16" height="16" className="icon_svg"><path d="M8 1a7 7 0 110 14A7 7 0 018 1zm0 2a5 5 0 100 10A5 5 0 008 3zM4.785 5.803A3.5 3.5 0 1110 10.06v.74a1.5 1.5 0 01-1.5 1.5h-1A1.5 1.5 0 016 10.8v-.74a3.5 3.5 0 01-1.215-4.257zM8 5.7a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/></svg>
-          Useful {props.review.useful}
+          Useful {props.plus ? props.review.useful + 1 : props.review.useful}
         </button>
         <button name="funny" style={buttonStyle}>
           <svg style={buttonSVG} xmlns="http://www.w3.org/2000/svg" width="16" height="16" className="icon_svg"><path d="M8 1a7 7 0 110 14A7 7 0 018 1zm0 2a5 5 0 100 10A5 5 0 008 3zm3.43 6a.15.15 0 01.14.18 3.62 3.62 0 01-7.14 0A.15.15 0 014.57 9zm-1.07-2.553c.34.197.55.56.55.953h-2.2a1.1 1.1 0 011.65-.953zM6.19 6.3a1.1 1.1 0 011.1 1.1h-2.2a1.1 1.1 0 011.1-1.1z"/></svg>
