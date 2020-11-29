@@ -178,15 +178,15 @@ const ListItem = (props) => (
         })}
       </div>
       <div>
-        <button name="useful" onClick={(e) => props.toggleButton(e)} style={props.plus && props.key === props.revID ? buttonClicked : buttonStyle}>
+        <button name="useful" className="btn" onClick={(e) => props.toggleButton(e)} >
           <svg style={buttonSVG} xmlns="http://www.w3.org/2000/svg" width="16" height="16" className="icon_svg"><path d="M8 1a7 7 0 110 14A7 7 0 018 1zm0 2a5 5 0 100 10A5 5 0 008 3zM4.785 5.803A3.5 3.5 0 1110 10.06v.74a1.5 1.5 0 01-1.5 1.5h-1A1.5 1.5 0 016 10.8v-.74a3.5 3.5 0 01-1.215-4.257zM8 5.7a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/></svg>
           Useful {props.plus ? props.review.useful + 1 : props.review.useful}
         </button>
-        <button name="funny" style={buttonStyle}>
+        <button name="funny" className="btn">
           <svg style={buttonSVG} xmlns="http://www.w3.org/2000/svg" width="16" height="16" className="icon_svg"><path d="M8 1a7 7 0 110 14A7 7 0 018 1zm0 2a5 5 0 100 10A5 5 0 008 3zm3.43 6a.15.15 0 01.14.18 3.62 3.62 0 01-7.14 0A.15.15 0 014.57 9zm-1.07-2.553c.34.197.55.56.55.953h-2.2a1.1 1.1 0 011.65-.953zM6.19 6.3a1.1 1.1 0 011.1 1.1h-2.2a1.1 1.1 0 011.1-1.1z"/></svg>
           Funny {props.review.funny}
         </button>
-        <button name="cool" style={buttonStyle}>
+        <button name="cool" className="btn">
           <svg style={buttonSVG} xmlns="http://www.w3.org/2000/svg" width="16" height="16" className="icon_svg"><path d="M8 1a7 7 0 110 14A7 7 0 018 1zm0 2a5 5 0 100 10A5 5 0 008 3zm2.58 7.32a.15.15 0 01.16.23A3.43 3.43 0 018 12a3.43 3.43 0 01-2.74-1.42.15.15 0 01.16-.23 9.82 9.82 0 005.16-.03zm1.66-3.66a.26.26 0 01.25.34L12 8.5a1.78 1.78 0 01-1.7 1.21l-.15-.007A1.78 1.78 0 018.62 8.51L8.45 8A.48.48 0 008 7.67l-.086.009A.48.48 0 007.55 8l-.17.5A1.78 1.78 0 015.7 9.71l-.152-.005A1.78 1.78 0 014 8.5L3.51 7a.26.26 0 01.25-.34z"/></svg>
           Cool {props.review.cool}
         </button>

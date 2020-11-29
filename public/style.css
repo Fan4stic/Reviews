@@ -1,4 +1,37 @@
-.title {
+
+.btn {
+  margin: 15px 6px 15px 6px;
+  padding: 0px 12px;
+  height: 30px;
+  color: darkslategray;
+  background: white;
+  border-radius: 4px;
+  border-color: gray;
+  border-width: thin;
+  box-shadow: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: lightgray;
+  box-shadow: 5px;
+}
+
+.btn:focus {
+  color: teal;
+  font-weight: 600;
+  background-color: rgb(175, 205, 205);
+  border-color: teal;
+  border-radius: 4px;
+  border-style: solid;
+  box-shadow: 5px gray
+
+
+}
+
+
+
+/* .title {
   font-size: 20px;
   font-weight: 300;
   background-color: lightskyblue;
@@ -15,8 +48,8 @@ body {
 }
 hr {
   color: #e6e6e6
-}
-.modal {
+} */
+/* .modal {
   position: fixed;
   top: 200px;
   padding: 24px;
@@ -24,8 +57,8 @@ hr {
   background-color: white;
   border: 1px solid grey;
   border-radius: 3px;
-}
-/* 
+} */
+/*
 .paginationContainer {
   -webkit-box-align: center;
   align-items: center;

@@ -80,7 +80,7 @@ class Reviews extends React.Component {
     this.setState({ show: false });
   }
   toggleButton(e) {
-    e.preventDefault;
+    e.preventDefault();
     this.setState({ plus: !this.state.plus });
   }
 

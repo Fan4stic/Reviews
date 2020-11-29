@@ -47,7 +47,7 @@ const currPageStyle = {
   backgroundColor: 'transparent',
   border: 'none',
   padding: '10px',
-  color: '#757280',
+  color: 'black',
   verticalAlign: 'center',
   fontFamily: 'Open Sans, Helvetica Neue, sans-serif, arial',
   fontSize: '16px',
@@ -99,7 +99,7 @@ const Pagination = ({ reviewsPerPage, totalReviews, selectPage, currentPage }) =
           </svg>
         </button>
         {pageNumbers.map((number, i) => (
-          <button style={pageButtonStyle} onClick={selectPage} key={number + 1} value={currentPage > 5 ? i + currentPage - 4 : i + 1}>
+          <button style={currentPage === i + 1 ? currPageStyle : pageButtonStyle} onClick={selectPage} key={number + 1} value={currentPage > 5 ? i + currentPage - 4 : i + 1}>
             {number}
           </button>
         ))}

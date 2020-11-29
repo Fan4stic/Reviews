@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
 const controller = require('../db/controller.js');
-const model = require('../db/model.js');
 const compression = require('compression');
 
 const app = express();
