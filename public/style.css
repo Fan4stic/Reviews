@@ -27,7 +27,28 @@
   box-shadow: 5px gray
 }
 
+.pagenum {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  color: darkgray;
+  vertical-align: center;
+  font-family: Open Sans, Helvetica Neue, sans-serif, arial;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer
+}
 
+.pagenum:hover {
+  color: black;
+
+}
+
+.pagenum:focus {
+  color: black;
+  font-weight: 600;
+  border: none
+}
 
 
 /* .title {

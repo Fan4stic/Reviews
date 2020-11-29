@@ -25,11 +25,6 @@ const startRevStyle = {
   verticalAlign: 'baseline'
 };
 
-// const indexOfLastReview = currentPage * reviewsPerPage;
-// const indexOfFirstReview = indexOfLastReview - reviewsPerPage;
-// const currentReviews = reviews.slice(indexOfFirstReview, indexOfLastReview);
-
-// could use 'loaded' as  a property on state which starts as false and after componentDidMount, will turn to true.
 class Reviews extends React.Component {
   constructor(props) {
     super(props);
@@ -54,7 +49,7 @@ class Reviews extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/api/restaurants/7/reviews')
+    axios.get('/api/restaurants/5/reviews')
       .then((info)=> {
         this.setState({reviews: info.data, currentReviews: info.data.slice(0, 10)});
       })
@@ -64,8 +59,8 @@ class Reviews extends React.Component {
 
   selectPage(e) {
     e.preventDefault;
-    let start = (e.target.value - 1) * 10;
-    let end = (e.target.value) * 10;
+    let start = (e.target.value - 1) * this.state.reviewsPerPage;
+    let end = (e.target.value) * this.state.reviewsPerPage;
     this.setState({currentReviews: this.state.reviews.slice(start, end), currentPage: parseInt(e.target.value)});
     window.scrollTo({
       top: 0

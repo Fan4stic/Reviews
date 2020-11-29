@@ -31,29 +31,29 @@ const sideButton = {
   fill: '#757280',
 };
 
-const pageButtonStyle = {
-  backgroundColor: 'transparent',
-  border: 'none',
-  padding: '10px',
-  color: '#757280',
-  verticalAlign: 'center',
-  fontFamily: 'Open Sans, Helvetica Neue, sans-serif, arial',
-  fontSize: '16px',
-  fontWeight: '400',
-  cursor: 'pointer'
-};
+// const pageButtonStyle = {
+//   backgroundColor: 'transparent',
+//   border: 'none',
+//   padding: '10px',
+//   color: '#757280',
+//   verticalAlign: 'center',
+//   fontFamily: 'Open Sans, Helvetica Neue, sans-serif, arial',
+//   fontSize: '16px',
+//   fontWeight: '400',
+//   cursor: 'pointer'
+// };
 
-const currPageStyle = {
-  backgroundColor: 'transparent',
-  border: 'none',
-  padding: '10px',
-  color: 'black',
-  verticalAlign: 'center',
-  fontFamily: 'Open Sans, Helvetica Neue, sans-serif, arial',
-  fontSize: '16px',
-  fontWeight: '600',
-  cursor: 'pointer'
-};
+// const currPageStyle = {
+//   backgroundColor: 'transparent',
+//   border: 'none',
+//   padding: '10px',
+//   color: 'black',
+//   verticalAlign: 'center',
+//   fontFamily: 'Open Sans, Helvetica Neue, sans-serif, arial',
+//   fontSize: '16px',
+//   fontWeight: '600',
+//   cursor: 'pointer'
+// };
 
 
 const pageInfoStyle = {
@@ -101,17 +101,17 @@ const Pagination = ({ reviewsPerPage, totalReviews, selectPage, currentPage }) =
     <div>
       <hr/>
       <div style={pageContainer} id='paginationContainer'>
-        <button style={sideButton} value={parseInt(currentPage - 1)} onClick={selectPage}>
+        <button className="pagenum" style={sideButton} value={parseInt(currentPage - 1)} onClick={selectPage}>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="icon_svg">
             <path d="M14.25 17.58a1 1 0 01-.71-.3L9 12.7a1 1 0 010-1.4l4.5-4.58A1 1 0 0115 6.7a1 1 0 010 1.42L11.15 12 15 15.88a1 1 0 010 1.42 1 1 0 01-.75.28z"/>
           </svg>
         </button>
         {pageNumbers.map((number, i) => (
-          <button style={valueCalculator(currentPage, i) === currentPage ? currPageStyle : pageButtonStyle} onClick={selectPage} key={number + 1} value={valueCalculator(currentPage, i)}>
+          <button className="pagenum" onClick={selectPage} key={number + 1} value={valueCalculator(currentPage, i)}>
             {number}
           </button>
         ))}
-        <button value={parseInt(currentPage + 1)} onClick={selectPage} style={sideButton} >
+        <button className="pagenum" value={parseInt(currentPage + 1)} onClick={selectPage} style={sideButton} >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="icon_svg"><path d="M9.75 17.58a1 1 0 01-.7-.28 1 1 0 010-1.42l3.8-3.88L9 8.12a1 1 0 111.41-1.42L15 11.3a1 1 0 010 1.4l-4.5 4.58a1 1 0 01-.75.3z"/></svg>
         </button>
       </div>
