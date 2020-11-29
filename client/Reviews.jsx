@@ -6,6 +6,7 @@ import Modal from './Modal.jsx';
 import Form from './Form.jsx';
 import Stars from './Stars.jsx';
 import Pagination from './Pagination.jsx';
+import Search from './Search.jsx';
 
 
 const wholeContainer = {
@@ -84,6 +85,7 @@ class Reviews extends React.Component {
   render() {
     return (
       <div style={wholeContainer}>
+        <Search />
         <div style={startRevStyle}>
           <img style={{ width: "148px", height: "68px" }}src="https://s3-us-west-1.amazonaws.com/fec.yelp/yelpStyle/Imageye+-+Styleguide/empty_profile%402x.yji-f52f768da99ad105f2d4ad4190f25c31.png"/>
           <div >
