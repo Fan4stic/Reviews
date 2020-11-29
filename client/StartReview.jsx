@@ -22,7 +22,11 @@ const StartReview = (props) => {
     <div style={reviewBoxStyle}>
       <Stars showModal={props.showModal}/>
       <hr/>
-      <span style={textStyle}>Start your review of </span><span style={{fontWeight: '900', color: 'teal'}}>{props.loaded ? props.resname : 'loading'}</span><span style={textStyle}> here</span>
+      <div onClick={props.showModal} style={{cursor: "pointer"}}>
+        <span style={textStyle}>Start your review of </span>
+        <span style={{fontWeight: '900', color: 'teal'}}>{props.loaded ? props.resname : 'loading'}</span>
+        <span style={textStyle}> here</span>
+      </div>
     </div>
   );
 };
