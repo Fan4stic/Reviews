@@ -87,6 +87,14 @@ const Pagination = ({ reviewsPerPage, totalReviews, selectPage, currentPage }) =
     }
   }
 
+  const valueCalculator = (currPage, i) => {
+    if (currPage > 5) {
+      return parseInt(i + currPage - 4);
+    } else {
+      return parseInt(i + 1);
+    }
+  };
+
 
 
   return (
@@ -99,7 +107,7 @@ const Pagination = ({ reviewsPerPage, totalReviews, selectPage, currentPage }) =
           </svg>
         </button>
         {pageNumbers.map((number, i) => (
-          <button style={currentPage === i + 1 ? currPageStyle : pageButtonStyle} onClick={selectPage} key={number + 1} value={currentPage > 5 ? i + currentPage - 4 : i + 1}>
+          <button style={valueCalculator(currentPage, i) === currentPage ? currPageStyle : pageButtonStyle} onClick={selectPage} key={number + 1} value={valueCalculator(currentPage, i)}>
             {number}
           </button>
         ))}
