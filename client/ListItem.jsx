@@ -100,6 +100,10 @@ const photoUrl = (n) => {
   return `https://s3-us-west-1.amazonaws.com/fec.yelp/SamsFood/Imageye+-+Sushi+Sam_s+Edomata+-+Takeout+_+Delivery+-+4522+Photos+_+2320+Reviews+-+Sushi+Bars+-+218+E+3rd+Ave_+San+Mateo_+CA+-+Restaurant+Reviews+-+Phone+Number+-+Menu+-+Yelp/300s+(` + randInt(n) + `).jpg`;
 };
 
+const avatarUrl = (n) => {
+  return `https://s3-us-west-1.amazonaws.com/fec.yelp/avatars/avatars/` + randInt(n) + `.jpeg`;
+};
+
 const dateStyle = {
   color: '#757280',
   fontSize: '14px',
@@ -140,7 +144,7 @@ const buttonClicked = {
 const ListItem = (props) => (
   <div style={divStyle}>
     <aside style={asideStyle}>
-      <img style={avatar} src="https://i.pravatar.cc/100" />
+      <img style={avatar} src={avatarUrl(10)} />
       <div style={detailStyle}>
         <div style={{fontWeight: 'bold', fontSize: '14px'}}>{props.review.userName}</div>
         <div style={{fontSize: '14px'}}>{props.review.city}, {props.review.userState}</div>
