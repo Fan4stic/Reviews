@@ -7,7 +7,8 @@ const reviewBoxStyle = {
   padding: "24px",
   border: "1px",
   backgroundColor: "#f5f5f5",
-  borderRadius: "4px"
+  borderRadius: "4px",
+  minHeight: '110px'
 };
 
 const textStyle = {

@@ -7,6 +7,7 @@ import Form from './Form.jsx';
 import Stars from './Stars.jsx';
 import Pagination from './Pagination.jsx';
 import Search from './Search.jsx';
+import styles from './style.css';
 
 
 const wholeContainer = {
@@ -23,7 +24,8 @@ const startRevStyle = {
   padding: '20px 0px 0px 20px',
   fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
   lineHeight: '20px',
-  verticalAlign: 'baseline'
+  verticalAlign: 'baseline',
+  minHeight: '120px'
 };
 
 class Reviews extends React.Component {
