@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import Stars from './Stars.jsx';
 
 const reviewBoxStyle = {
-  height: "101px",
+  minHeight: "101px",
   width: "416px",
   padding: "24px",
   border: "1px",
   backgroundColor: "#f5f5f5",
   borderRadius: "4px",
-  minHeight: '110px'
+  // minHeight: '140px'
 };
 
 const textStyle = {

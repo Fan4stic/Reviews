@@ -50,16 +50,16 @@
   border: none
 }
 
-body {
+.body {
   font-family: Open Sans, Helvetica Neue, sans-serif, arial;
   font-weight: 400;
   line-height:20px;
   width: 715px;
 }
 
-hr {
+/* hr {
   color: #e6e6e6
-}
+} */
 
 .searchBar {
 appearance: none;
