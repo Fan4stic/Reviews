@@ -1,4 +1,5 @@
 import React from 'react';
+import style from './style.css';
 
 const divStyle = {
   margin: '20px 0px 0px 20px',

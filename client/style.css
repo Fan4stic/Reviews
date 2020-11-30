@@ -1,0 +1,94 @@
+
+.btn {
+  margin: 15px 6px 15px 6px;
+  padding: 0px 12px;
+  height: 30px;
+  color: darkslategray;
+  background: white;
+  border-radius: 4px;
+  border-color: gray;
+  border-width: thin;
+  box-shadow: none;
+  transition: 0.6s;
+}
+
+.btn:hover {
+  background-color: lightgray;
+  box-shadow: 5px;
+}
+
+.btn:focus {
+  color: teal;
+  font-weight: 600;
+  background-color: rgb(175, 205, 205);
+  border-color: teal;
+  border-radius: 4px;
+  border-style: solid;
+  box-shadow: 5px gray
+}
+
+.pagenum {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  color: darkgray;
+  vertical-align: center;
+  font-family: Open Sans, Helvetica Neue, sans-serif, arial;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer
+}
+
+.pagenum:hover {
+  color: black;
+
+}
+
+.pagenum:focus {
+  color: black;
+  font-weight: 600;
+  border: none
+}
+
+
+/* .title {
+  font-size: 20px;
+  font-weight: 300;
+  background-color: lightskyblue;
+  text-align: left;
+  padding: 10px 10px;
+  color: black;
+}
+body {
+  font-family: Open Sans, Helvetica Neue, sans-serif, arial;
+  font-weight: 400;
+
+  line-height:20px;
+  width: 715px;
+}
+hr {
+  color: #e6e6e6
+} */
+/* .modal {
+  position: fixed;
+  top: 200px;
+  padding: 24px;
+  left: 200px;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 3px;
+} */
+/*
+.paginationContainer {
+  -webkit-box-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: flex;
+  height: 30px;
+  -webkit-box-pack: center;
+  justify-content: center;
+  min-width: 26px;
+  padding: 0 6px;
+} */
+

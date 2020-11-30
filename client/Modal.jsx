@@ -18,7 +18,7 @@ const submitStyling = {
   transitionProperty: 'background-image,background-color,background-position,background-size,border-color,box-shadow',
   font: '500 16px Arial'
 };
-const modalStyle =  {
+const modalStyle = {
   position: 'fixed',
   top: '100px',
   padding: '24px',
@@ -27,7 +27,8 @@ const modalStyle =  {
   border: '1px solid grey',
   borderRadius: '3px',
   float: 'center',
-  verticalAlign: 'top'
+  verticalAlign: 'top',
+  zIndex: '999'
 };
 
 const nameStyle = {
