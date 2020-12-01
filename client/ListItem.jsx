@@ -94,16 +94,28 @@ const ratingToStars = (rating) => {
   }
 };
 
-const randInt = (n) => Math.floor(Math.random() * n);
-//use 4 to determine how many photos
+// const randInt = (n) => Math.floor(Math.random() * n);
+// //use 4 to determine how many photos
 
-const photoUrl = (n) => {
-  return `https://s3-us-west-1.amazonaws.com/fec.yelp/SamsFood/Imageye+-+Sushi+Sam_s+Edomata+-+Takeout+_+Delivery+-+4522+Photos+_+2320+Reviews+-+Sushi+Bars+-+218+E+3rd+Ave_+San+Mateo_+CA+-+Restaurant+Reviews+-+Phone+Number+-+Menu+-+Yelp/300s+(` + randInt(n) + `).jpg`;
+// const photoUrl = (n) => {
+//   return `https://s3-us-west-1.amazonaws.com/fec.yelp/SamsFood/Imageye+-+Sushi+Sam_s+Edomata+-+Takeout+_+Delivery+-+4522+Photos+_+2320+Reviews+-+Sushi+Bars+-+218+E+3rd+Ave_+San+Mateo_+CA+-+Restaurant+Reviews+-+Phone+Number+-+Menu+-+Yelp/300s+(` + randInt(n) + `).jpg`;
+// };
+
+// const avatarUrl = (n) => {
+//   return `https://s3-us-west-1.amazonaws.com/fec.yelp/avatars/avatars/` + randInt(n) + `.jpeg`;
+// };
+
+
+const source = (props, n) => {
+  if (n === 0) {
+    return props.review.photo1;
+  } else if (n === 1) {
+    return props.review.photo2;
+  } else {
+    return props.review.photo3;
+  }
 };
 
-const avatarUrl = (n) => {
-  return `https://s3-us-west-1.amazonaws.com/fec.yelp/avatars/avatars/` + randInt(n) + `.jpeg`;
-};
 
 const dateStyle = {
   color: '#757280',
@@ -145,7 +157,7 @@ const buttonClicked = {
 const ListItem = (props) => (
   <div style={divStyle}>
     <aside style={asideStyle}>
-      <img style={avatar} src={avatarUrl(10)} />
+      <img style={avatar} src={props.review.avatar} />
       <div style={detailStyle}>
         <div style={{fontWeight: 'bold', fontSize: '14px'}}>{props.review.userName}</div>
         <div style={{fontSize: '14px'}}>{props.review.city}, {props.review.userState}</div>
@@ -177,9 +189,9 @@ const ListItem = (props) => (
       <div style={textStyle}> {props.review.reviewText}</div>
       <br></br>
       <div>
-        {[...Array(randInt(4))].map((pic, i, arr) => {
+        {[...Array(props.review.numberPhotos)].map((pic, i, arr) => {
           return (
-            <img key={i} style={((arr.length !== 2) && (i === 0)) ? reviewPhotoLarge : reviewPhotoSmall} src ={photoUrl(17)} />);
+            <img key={i} style={((arr.length !== 2) && (i === 0)) ? reviewPhotoLarge : reviewPhotoSmall} src={source(props, i)} />);
         })}
       </div>
       <div>

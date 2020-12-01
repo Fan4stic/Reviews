@@ -11,7 +11,7 @@ const randInt = (n) => Math.floor(Math.random() * n);
 
 //there are 65 photos avaialble in this folder
 const photoUrl = (n) => {
-  return `https://s3-us-west-1.amazonaws.com/fec.yelp/food/LazyBear/` + randInt(n) + `).jpg`;
+  return `https://s3-us-west-1.amazonaws.com/fec.yelp/food/LazyBear/` + randInt(n) + `.jpg`;
 };
 //there are 10 avatars
 const avatarUrl = (n) => {
@@ -21,7 +21,7 @@ const avatarUrl = (n) => {
 createRestaurants = async (amount) => {
   try {
     while (restaurantCount < amount) {
-      let queryStr = `insert into Restaurants values (0, "${faker.lorem.words(2)}", ${Math.random() * 5})`;
+      let queryStr = `insert into Restaurants values (0, "${faker.lorem.words(2)}", ${Math.random() * 5} )`;
       await connection.asyncQuery(queryStr);
       restaurantCount++;
     }
@@ -34,7 +34,8 @@ createRestaurants = async (amount) => {
 createUsers = async (amount) => {
   try {
     while (userCount < amount) {
-      let queryStr = `insert into Users values (0, "${faker.name.firstName()} ${faker.lorem.word(1).toUpperCase()}.", ${Math.floor(Math.random() * 500)}, "${faker.address.city()}", "${faker.address.stateAbbr()}", ${Math.floor(Math.random() * 100)}, ${Math.floor(Math.random() * 100)}, ${faker.random.boolean()}, "${faker.image.avatar()}")`;
+      let queryStr = `insert into Users values (
+        0, "${faker.name.firstName()} ${faker.lorem.word(1).toUpperCase()}.", ${Math.floor(Math.random() * 500)}, "${faker.address.city()}", "${faker.address.stateAbbr()}", ${Math.floor(Math.random() * 100)}, ${Math.floor(Math.random() * 100)}, ${faker.random.boolean()}, "${avatarUrl(10)}" )`;
       await connection.asyncQuery(queryStr);
       userCount++;
     }
@@ -46,7 +47,7 @@ createUsers = async (amount) => {
 createReviews = async (amount, users, restaurants) => {
   try {
     while (reviewCount < amount) {
-      let queryStr = `insert into Reviews values(0, ${Math.floor(Math.random() * 6)}, "${faker.lorem.paragraphs(3)}", ${Math.floor(Math.random() * users)}, ${Math.floor(Math.random() * restaurants)}, "${faker.date.past().toJSON().slice(0, 10)}", ${Math.floor(Math.random() * 100)}, ${Math.floor(Math.random() * 100)}, ${Math.floor(Math.random() * 100)}, "${faker.lorem.paragraph()}", "${faker.name.findName()}", "${faker.date.recent().toJSON().slice(0, 10)}")`;
+      let queryStr = `insert into Reviews values( 0, ${Math.floor(Math.random() * 6)}, "${faker.lorem.paragraphs(3)}", ${Math.floor(Math.random() * users)}, ${Math.floor(Math.random() * restaurants)}, "${faker.date.past().toJSON().slice(0, 10)}", ${Math.floor(Math.random() * 100)}, ${Math.floor(Math.random() * 100)}, ${Math.floor(Math.random() * 100)}, "${faker.lorem.paragraph()}", "${faker.name.findName()}", "${faker.date.recent().toJSON().slice(0, 10)}", ${randInt(4)}, "${photoUrl(65)}", "${photoUrl(65)}", "${photoUrl(65)}" )`;
       await connection.asyncQuery(queryStr);
       reviewCount++;
     }
@@ -55,24 +56,29 @@ createReviews = async (amount, users, restaurants) => {
   }
 };
 
-createPhotos = async (amount, reviews) => {
+// createPhotos = async (amount, reviews) => {
+//   try {
+//     while (photoCount < amount) {
+//       let queryStr = `insert into Photos values(0, ${Math.floor(Math.random() * reviews)}, "${faker.image.food()}")`;
+//       await connection.asyncQuery(queryStr);
+//       photoCount++;
+//     }
+//   } catch (err) {
+//     console.log(err)
+//   }
+// };
+//reviews and photos dont work because foreign keys... they dont exist before theyre created. async issues.
+seedAll = async () => {
   try {
-    while (photoCount < amount) {
-      let queryStr = `insert into Photos values(0, ${Math.floor(Math.random() * reviews)}, "${faker.image.food()}")`;
-      await connection.asyncQuery(queryStr);
-      photoCount++;
-    }
+    await createRestaurants(100);
+    await createUsers(100);
+    await createReviews(20000, 100, 100);
   } catch (err) {
     console.log(err)
   }
 };
-//reviews and photos dont work because foreign keys... they dont exist before theyre created. async issues.
 
-createRestaurants(100);
-createUsers(100);
-createReviews(10000, 100, 100);
-createPhotos(100, 100);
-
+seedAll();
 
 //need to run these commands manually to add foreign keys back
 
@@ -103,11 +109,3 @@ createPhotos(100, 100);
 // });
 
 // addFKConstraints();
-
-
-
-
-
-
-
-
