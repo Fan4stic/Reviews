@@ -56,56 +56,14 @@ createReviews = async (amount, users, restaurants) => {
   }
 };
 
-// createPhotos = async (amount, reviews) => {
-//   try {
-//     while (photoCount < amount) {
-//       let queryStr = `insert into Photos values(0, ${Math.floor(Math.random() * reviews)}, "${faker.image.food()}")`;
-//       await connection.asyncQuery(queryStr);
-//       photoCount++;
-//     }
-//   } catch (err) {
-//     console.log(err)
-//   }
-// };
-//reviews and photos dont work because foreign keys... they dont exist before theyre created. async issues.
 seedAll = async () => {
   try {
     await createRestaurants(100);
     await createUsers(100);
-    await createReviews(20000, 100, 100);
+    await createReviews(30000, 100, 100);
   } catch (err) {
     console.log(err)
   }
 };
 
 seedAll();
-
-//need to run these commands manually to add foreign keys back
-
-// let addFKConstraints = (() => {
-//   let queryStr0 = 'set foriegn_key_checks=0';
-//   let queryStr1 = 'alter table Reviews add constraint fk_userID foreign key (userID) references Users(userID)';
-//   let queryStr2 = 'alter table Reviews add constraint fk_resID foreign key (resID) references Restaurants(resID)';
-//   let queryStr3 = 'alter table Photos add constraint fk_revID foreign key (revID) references Reviews(revID)';
-
-//   connection.query(queryStr0, (er, res1) => {
-//     if (er) {
-//       console.log(er)
-//     } else {
-//       connection.query(queryStr1, (er, res2) => {
-//         if (er) {
-//           console.log(er)
-//         } else {
-//           connection.query(queryStr2, (er, res3) => {
-//             if (er) {
-//               console.log(er)
-//             } else {
-//               connection.query(queryStr3)
-//     }
-//   }
-//   connection.query(queryStr1);
-//   connection.query(queryStr2);
-//   connection.query(queryStr3);
-// });
-
-// addFKConstraints();

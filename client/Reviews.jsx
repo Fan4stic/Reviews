@@ -39,7 +39,9 @@ class Reviews extends React.Component {
       indexOfFirstReview: 0,
       indexOfLastReview: 10,
       show: false,
-      plus: false,
+      plusUseful: false,
+      plusFunny: false,
+      plusCool: false,
       loaded: false
 
     };
@@ -47,7 +49,9 @@ class Reviews extends React.Component {
     this.selectPage = this.selectPage.bind(this);
     this.showModal = this.showModal.bind(this);
     this.hideModal = this.hideModal.bind(this);
-    this.toggleButton = this.toggleButton.bind(this);
+    this.toggleFunny = this.toggleFunny.bind(this);
+    this.toggleUseful = this.toggleUseful.bind(this);
+    this.toggleCool = this.toggleCool.bind(this);
 
   }
 
@@ -61,7 +65,7 @@ class Reviews extends React.Component {
   }
 
   selectPage(e) {
-    e.preventDefault;
+    e.preventDefault();
     let start = (e.target.value - 1) * this.state.reviewsPerPage;
     let end = (e.target.value) * this.state.reviewsPerPage;
     this.setState({currentReviews: this.state.reviews.slice(start, end), currentPage: parseInt(e.target.value)});
@@ -77,9 +81,20 @@ class Reviews extends React.Component {
   hideModal() {
     this.setState({ show: false });
   }
-  toggleButton(e) {
+
+  toggleFunny(e) {
     e.preventDefault();
-    this.setState({ plus: !this.state.plus });
+    this.setState({ plusFunny: !this.state.plusFunny });
+  }
+
+  toggleUseful(e) {
+    e.preventDefault();
+    this.setState({ plusUseful: !this.state.plusUseful });
+  }
+
+  toggleCool(e) {
+    e.preventDefault();
+    this.setState({ plusCool: !this.state.plusCool });
   }
 
 
@@ -98,7 +113,7 @@ class Reviews extends React.Component {
           </Modal> : null}
         </div>
         <div>
-          <ReviewList toggleButton={this.toggleButton} reviews={this.state.currentReviews} plus={this.state.plus} />
+          <ReviewList toggleFunny={this.toggleFunny} toggleCool={this.toggleCool} toggleUseful={this.toggleUseful} reviews={this.state.currentReviews} plusFunny={this.state.plusFunny} plusUseful={this.state.plusUseful} plusCool={this.state.plusCool} />
           <Pagination currentPage={this.state.currentPage} selectPage={this.selectPage} reviewsPerPage={10} totalReviews={this.state.reviews.length} />
         </div>
       </div>

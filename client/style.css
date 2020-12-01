@@ -102,6 +102,28 @@ font-size: 15px;
   cursor: pointer;
 }
 
+.photoText {
+  font-size: 13px;
+  color: rgb(71, 167, 167);
+  cursor: pointer;
+  padding: 4px;
+  font-weight: 350;
+  vertical-align: baseline;
+}
+
+.photoText:hover {
+  text-decoration: underline;
+}
+
+.launchReview {
+  text-align: center;
+  color: #00838f
+}
+
+.launchReview:hover {
+  text-decoration: underline;
+}
+
 /* .modal {
   position: fixed;
   top: 200px;

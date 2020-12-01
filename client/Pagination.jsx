@@ -95,16 +95,14 @@ const Pagination = ({ reviewsPerPage, totalReviews, selectPage, currentPage }) =
     }
   };
 
-
-
   return (
     <div>
       <hr/>
       <div style={pageContainer} id='paginationContainer'>
-        <button className="pagenum" style={sideButton} value={parseInt(currentPage - 1)} onClick={selectPage}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="icon_svg">
+        <button className="pagenum" style={sideButton} value={parseInt(currentPage - 1)} onClick={selectPage}> &lt;
+          {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="icon_svg">
             <path d="M14.25 17.58a1 1 0 01-.71-.3L9 12.7a1 1 0 010-1.4l4.5-4.58A1 1 0 0115 6.7a1 1 0 010 1.42L11.15 12 15 15.88a1 1 0 010 1.42 1 1 0 01-.75.28z"/>
-          </svg>
+          </svg> */}
         </button>
         {pageNumbers.map((number, i) => (
           <button className="pagenum" onClick={selectPage} key={number + 1} value={valueCalculator(currentPage, i)}>

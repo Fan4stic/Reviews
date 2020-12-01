@@ -8,6 +8,7 @@ const reviewBoxStyle = {
   border: "1px",
   backgroundColor: "#f5f5f5",
   borderRadius: "4px",
+  alignContent: "center"
   // minHeight: '140px'
 };
 
@@ -16,17 +17,25 @@ const textStyle = {
   color: "#00838f"
 
 };
+
+const starCenter = {
+  textAlign: "center",
+
+};
+
 const StartReview = (props) => {
 
 
   return (
     <div style={reviewBoxStyle}>
-      <Stars showModal={props.showModal}/>
+      <div style={{textAlign: "center"}}>
+        <Stars showModal={props.showModal}/>
+      </div>
       <hr/>
-      <div onClick={props.showModal} style={{cursor: "pointer"}}>
-        <span style={textStyle}>Start your review of </span>
-        <span style={{fontWeight: '900', color: 'teal'}}>{props.loaded ? props.resname : 'loading'}</span>
-        <span style={textStyle}> here</span>
+      <div className="launchReview" onClick={props.showModal} style={{cursor: "pointer"}}>
+        <span className="launchReview" >Start your review of </span>
+        <span className="launchReview" style={{fontWeight: '900', color: 'teal'}}>{props.loaded ? props.resname : 'loading'}</span>
+        <span className="launchReview" > here</span>
       </div>
     </div>
   );
