@@ -111,8 +111,8 @@ const Pagination = ({ reviewsPerPage, totalReviews, selectPage, currentPage }) =
             {number}
           </button>
         ))}
-        <button className="pagenum" value={parseInt(currentPage + 1)} onClick={selectPage} style={sideButton} >
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="icon_svg"><path d="M9.75 17.58a1 1 0 01-.7-.28 1 1 0 010-1.42l3.8-3.88L9 8.12a1 1 0 111.41-1.42L15 11.3a1 1 0 010 1.4l-4.5 4.58a1 1 0 01-.75.3z"/></svg>
+        <button className="pagenum" value={parseInt(currentPage + 1)} onClick={selectPage} style={sideButton} > >
+          {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="icon_svg"><path d="M9.75 17.58a1 1 0 01-.7-.28 1 1 0 010-1.42l3.8-3.88L9 8.12a1 1 0 111.41-1.42L15 11.3a1 1 0 010 1.4l-4.5 4.58a1 1 0 01-.75.3z"/></svg> */}
         </button>
       </div>
       <div style={pageInfoStyle}>
