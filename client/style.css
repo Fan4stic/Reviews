@@ -17,7 +17,7 @@
   box-shadow: 5px;
 }
 
-.btn:visited {
+.btn:focus {
   color: teal;
   font-weight: 600;
   background-color: rgb(175, 205, 205);
