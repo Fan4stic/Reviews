@@ -39,6 +39,6 @@ CREATE TABLE Reviews (
   photo1 VARCHAR(500),
   photo2 VARCHAR(500),
   photo3 VARCHAR(500)
+);
   -- FOREIGN KEY (userID) REFERENCES Users(userID),
   -- FOREIGN KEY (resID) REFERENCES Restaurants(resID)
-);
