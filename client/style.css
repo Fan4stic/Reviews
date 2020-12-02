@@ -17,7 +17,7 @@
   box-shadow: 5px;
 }
 
-.btn:focus {
+.btn:visited {
   color: teal;
   font-weight: 600;
   background-color: rgb(175, 205, 205);
@@ -44,10 +44,18 @@
 
 }
 
-.pagenum:focus {
+.thisPage {
   color: black;
   font-weight: 600;
-  border: none
+  border: none;
+  background: transparent;
+  border-color: #fff;
+  vertical-align: bottom;
+  font-Family: Open Sans, Helvetica Neue, sans-serif, arial;
+  font-size: 16px;
+  padding: 10px;
+  font-weight: 400;
+  cursor: pointer;
 }
 
 .body {
@@ -75,6 +83,22 @@ border-radius: 4px 0px 0px 4px;
 transition: box-shadow .2s ease-in-out;
 float: left;
 font-size: 15px;
+}
+
+.searchBar:focus {
+  appearance: none;
+  display: block;
+  box-sizing: border-box;
+  width: 484px;
+  height: 48px;
+  padding: 13px 16px;
+  background-color: #fff;
+  border: none;
+  box-shadow: inset 0 0 0 2px teal;
+  border-radius: 4px 0px 0px 4px;
+  transition: box-shadow .2s ease-in-out;
+  float: left;
+  font-size: 15px;
 
 }
 
@@ -123,27 +147,3 @@ font-size: 15px;
 .launchReview:hover {
   text-decoration: underline;
 }
-
-/* .modal {
-  position: fixed;
-  top: 200px;
-  padding: 24px;
-  left: 200px;
-  background-color: white;
-  border: 1px solid grey;
-  border-radius: 3px;
-} */
-/*
-.paginationContainer {
-  -webkit-box-align: center;
-  align-items: center;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: flex;
-  height: 30px;
-  -webkit-box-pack: center;
-  justify-content: center;
-  min-width: 26px;
-  padding: 0 6px;
-} */
-
