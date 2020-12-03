@@ -7,7 +7,8 @@ const searchSVG = {
   padding: '12px',
   borderRadius: '0px 4px 4px 0px',
   border: 'none',
-  float: 'left'
+  float: 'left',
+  boxSizing: 'content-box'
 };
 
 const buttonSVG = {
@@ -35,7 +36,7 @@ const Search = (props) => (
     <div className="searchGrid">
       <form>
         <input className="searchBar" type='text' placeholder="Search within Reviews" />
-        <svg style={searchSVG} onClick={()=>console.log('search')} fill="white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="iconsvg"><path d="M21.853 20.355l-3.444-3.443a9.428 9.428 0 10-16.761-6.171 9.428 9.428 0 0015.348 7.586l3.443 3.442a1 1 0 101.414-1.414zM5.82 16.245a7.429 7.429 0 115.253 2.175 7.38 7.38 0 01-5.253-2.176z"/></svg>
+        <svg style={searchSVG} onClick={()=>console.log('search')} fill="white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="icog"><path d="M21.853 20.355l-3.444-3.443a9.428 9.428 0 10-16.761-6.171 9.428 9.428 0 0015.348 7.586l3.443 3.442a1 1 0 101.414-1.414zM5.82 16.245a7.429 7.429 0 115.253 2.175 7.38 7.38 0 01-5.253-2.176z"/></svg>
       </form>
       <div>
         <span style={{fontWeight: '300', fontSize: '14px', float: 'left'}}>Sort by
