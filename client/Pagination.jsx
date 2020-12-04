@@ -1,34 +1,33 @@
 import React from 'react';
 
 const pageStyle = {
-  borderColor: '#eeeeef',
-  display: 'inline-block',
-  cursor: 'pointer',
-  textAlign: 'left',
-  padding: '10px',
-  color: '#f454545',
-  verticalAlign: 'center'
+  borderColor   : 'transparent',
+  display       : 'inline-block',
+  cursor        : 'pointer',
+  textAlign     : 'left',
+  padding       : '10px',
+  color         : '#f454545',
+  verticalAlign : 'center'
 };
 
 const pageContainer = {
-  display: 'flex',
-  flexDirection: 'row',
-  flexWrap: 'nowrap',
-  justifyContent: 'flex-start',
-  alightItems: 'center',
-  alignContent: 'left',
-  height: '30px',
-  minWidth: '26px',
-  padding: '0px 6px',
-  cursor: 'pointer'
-
+  display        : 'flex',
+  flexDirection  : 'row',
+  flexWrap       : 'nowrap',
+  justifyContent : 'flex-start',
+  alightItems    : 'center',
+  alignContent   : 'left',
+  height         : '30px',
+  minWidth       : '26px',
+  padding        : '0px 6px',
+  cursor         : 'pointer'
 };
 const sideButton = {
-  backgroundColor: 'transparent',
-  border: 'none',
-  verticalAlign: 'center',
-  padding: '7px',
-  fill: '#757280',
+  backgroundColor : 'transparent',
+  border          : 'none',
+  verticalAlign   : 'center',
+  padding         : '7px',
+  fill            : '#757280'
 };
 
 // const pageButtonStyle = {
@@ -55,10 +54,9 @@ const sideButton = {
 //   cursor: 'pointer'
 // };
 
-
 const pageInfoStyle = {
-  color: '#757280',
-  textAlign: 'right',
+  color     : '#757280',
+  textAlign : 'right'
 };
 //if pagenumber greater than 5 make pagenumbers array only from 5 below to 5 above with currentpage in bold and
 
@@ -76,7 +74,7 @@ const Pagination = ({ reviewsPerPage, totalReviews, selectPage, currentPage }) =
       pageNumbers.push(i);
     }
   } else {
-    let hiPage = currentPage + 5;
+    let hiPage = currentPage + 4;
     let totalPages = Math.ceil(totalReviews / reviewsPerPage);
     if (totalPages < currentPage + 5) {
       hiPage = totalPages;
@@ -97,22 +95,31 @@ const Pagination = ({ reviewsPerPage, totalReviews, selectPage, currentPage }) =
 
   return (
     <div>
-      <hr/>
-      <div style={pageContainer} id='paginationContainer'>
-        <button className="pagenum" style={sideButton} value={parseInt(currentPage - 1)} onClick={selectPage}> &lt;
+      <hr />
+      <div style={pageContainer} id="paginationContainer">
+        <button className="pagenum" style={sideButton} value={parseInt(currentPage - 1) || 1} onClick={selectPage}>
+          {' '}
+          &lt;
         </button>
         {pageNumbers.map((number, i) => (
-          <button className={valueCalculator(currentPage, i) === currentPage ? "thisPage" : "pagenum"} onClick={selectPage} key={number + 1} value={valueCalculator(currentPage, i)}>
+          <button
+            className={valueCalculator(currentPage, i) === currentPage ? 'thisPage' : 'pagenum'}
+            onClick={selectPage}
+            key={number + 1}
+            value={valueCalculator(currentPage, i)}
+          >
             {number}
           </button>
         ))}
-        <button className="pagenum" value={parseInt(currentPage + 1)} onClick={selectPage} style={sideButton} > >
+        <button className="pagenum" value={parseInt(currentPage + 1)} onClick={selectPage} style={sideButton}>
+          {' '}
+          >
         </button>
       </div>
       <div style={pageInfoStyle}>
         {currentPage} of {Math.ceil(totalReviews / reviewsPerPage)}
       </div>
-      <hr/>
+      <hr />
     </div>
   );
 };

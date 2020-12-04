@@ -24,7 +24,7 @@
   border-color: teal;
   border-radius: 4px;
   border-style: solid;
-  box-shadow: 5px gray
+  box-shadow: 5px teal
 }
 
 .pagenum {
@@ -41,7 +41,10 @@
 
 .pagenum:hover {
   color: black;
+}
 
+.pagenum:focus {
+  background-color: transparent;
 }
 
 .thisPage {
