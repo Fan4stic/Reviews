@@ -4,7 +4,7 @@
 
 ## Description 
 
-A restaurant reviews webapp built with React, mySQL, Express, Node
+A reviews module for a restaurant reviews webapp built with React, mySQL, Express, Node
 
 ## Related Repos
 
