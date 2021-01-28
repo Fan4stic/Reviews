@@ -1,39 +1,31 @@
 # Project Name
 
-> Project description
+> Fan4stic
 
-## Related Projects
+## Description 
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+A restaurant reviews webapp. 
+
 
 ## Table of Contents
 
 1. [Usage](#Usage)
-1. [Requirements](#requirements)
+1. [Images](#Images)
 1. [Development](#development)
 
 ## Usage
 
-> Some usage instructions
+1. Install dependencies with 'npm install'
+1. Seed database with 'npm run seed'
+1. Compile with 'npm run webpack'
+1. Launch with 'npm start'
 
-## Requirements
+## Images
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
-- Node 6.13.0
-- etc
-
-## Development
-
-### Installing Dependencies
-
-From within the root directory:
-
-```sh
-npm install -g webpack
-npm install
-```
-
+<div>
+  <src img="https://readmeimages.s3-us-west-1.amazonaws.com/reviewsTop" />
+  <src img="https://readmeimages.s3-us-west-1.amazonaws.com/onephotorev" />
+  <src img="https://readmeimages.s3-us-west-1.amazonaws.com/revpaginated" />
+  <src img="https://readmeimages.s3-us-west-1.amazonaws.com/twophotorev" />
+  <src img="https://readmeimages.s3-us-west-1.amazonaws.com/threephotorev" />
+</div>
