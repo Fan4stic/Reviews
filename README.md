@@ -4,7 +4,14 @@
 
 ## Description 
 
-A restaurant reviews webapp. 
+A restaurant reviews webapp built with React, mySQL, Express, Node
+
+## Related Repos
+
+1. https://github.com/Fan4stic/ReviewsProxy
+1. https://github.com/Fan4stic/popular-dishes-service
+1. https://github.com/Fan4stic/photo-services
+1. https://github.com/Fan4stic/cart-service
 
 
 ## Table of Contents
