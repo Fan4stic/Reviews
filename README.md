@@ -23,9 +23,9 @@ A restaurant reviews webapp.
 ## Images
 
 <div>
-  <img src="https://readmeimages.s3-us-west-1.amazonaws.com/reviewsTop" height=400 width=400 />
-  <img src="https://readmeimages.s3-us-west-1.amazonaws.com/onephotorev" />
-  <img src="https://readmeimages.s3-us-west-1.amazonaws.com/revpaginated" />
-  <img src="https://readmeimages.s3-us-west-1.amazonaws.com/twophotorev" />
-  <img src="https://readmeimages.s3-us-west-1.amazonaws.com/threephotorev" />
+  <img src="https://readmeimages.s3-us-west-1.amazonaws.com/reviewsTop" height=300 width=300 />
+  <img src="https://readmeimages.s3-us-west-1.amazonaws.com/onephotorev" height=300 width=300/>
+  <img src="https://readmeimages.s3-us-west-1.amazonaws.com/revpaginated" height=300 width=300/>
+  <img src="https://readmeimages.s3-us-west-1.amazonaws.com/twophotorev" height=300 width=300/>
+  <img src="https://readmeimages.s3-us-west-1.amazonaws.com/threephotorev" height=300 width=300/>
 </div>
