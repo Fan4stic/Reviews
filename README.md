@@ -34,5 +34,4 @@ A restaurant reviews webapp built with React, mySQL, Express, Node
   <img src="https://readmeimages.s3-us-west-1.amazonaws.com/onephotorev" height=300 width=275/>
   <img src="https://readmeimages.s3-us-west-1.amazonaws.com/revpaginated" height=300 width=275/>
   <img src="https://readmeimages.s3-us-west-1.amazonaws.com/twophotorev" height=300 width=275/>
-  <img src="https://readmeimages.s3-us-west-1.amazonaws.com/threephotorev" height=300 width=275/>
 </div>
